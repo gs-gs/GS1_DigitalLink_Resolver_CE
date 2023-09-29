@@ -20,7 +20,7 @@ const logThis = (textToLog) => {
 const getDigitalLinkStructure = async (uri) => {
   let structuredObject = { result: '', error: '' };
   try {
-    const fetchURI = `http://digitallink-toolkit-service/analyseuri${uri}`;
+    const fetchURI = `http://localhost:3001/analyseuri${uri}`;
     const fetchResponse = await fetch(fetchURI); // Note - NO / before the uri variable!
     const result = await fetchResponse.json();
     if (fetchResponse.status === 200) {
@@ -98,7 +98,7 @@ const convertAINumericToLabel = async (aiNumeric) => {
     // return aiEntry.shortcode;
 
     try {
-      const uriToTest = `http://digitallink-toolkit-service/ailookup/${aiNumeric}`;
+      const uriToTest = `http://localhost:3001/ailookup/${aiNumeric}`;
       const fetchResponse = await fetch(uriToTest);
       const result = await fetchResponse.json();
       if (fetchResponse.status === 200) {

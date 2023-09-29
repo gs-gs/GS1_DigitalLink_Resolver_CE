@@ -8,6 +8,7 @@
 # with sample data by execuitng the script sqldb_create_script.sql stored in the same directory as this Dockerfile.
 
 # FROM mcr.microsoft.com/mssql/server:2017-latest
+# FROM --platform=linux/amd64 mcr.microsoft.com/mssql/server:2017-latest FOR DEPLOYMENT
 FROM mcr.microsoft.com/azure-sql-edge:latest
 
 # This root user is needed to for Azure SQL Edge to initialise the first time. Once initialised you can comment out this line

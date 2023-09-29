@@ -1,5 +1,5 @@
-# FROM --platform=linux/amd64 node:16-alpine3.14 FOR DEPLOYMENT
-FROM node:16-alpine3.14
+FROM --platform=linux/amd64 node:16-alpine3.14
+# FROM node:16-alpine3.14
 
 ENV TZ=Europe/London
 # These two environment variables must point to the K8s DNS Service name for Mongo and Build Dync servers

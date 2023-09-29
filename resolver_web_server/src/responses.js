@@ -164,7 +164,7 @@ const convertAINumericToLabel = async (aiNumeric) => {
     // return aiEntry.shortcode;
 
     try {
-      const uriToTest = `http://digitallink-toolkit-service/ailookup/${aiNumeric}`;
+      const uriToTest = `http://localhost:3001/ailookup/${aiNumeric}`;
       const fetchResponse = await fetch(uriToTest);
       const result = await fetchResponse.json();
       if (fetchResponse.status === 200) {

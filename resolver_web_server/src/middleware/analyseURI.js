@@ -5,7 +5,7 @@ const { BadRequestParameter } = require('../utils/custom-error');
 
 const analyseURI = async (req, res, next) => {
   // Make a request to analysis uri call to DL toolkit
-  const _url = `http://digitallink-toolkit-service/analyseuri${req.path}`;
+  const _url = `http://localhost:3001/analyseuri${req.path}`;
   const fetchData = await fetch(_url);
   const result = await fetchData.json();
 

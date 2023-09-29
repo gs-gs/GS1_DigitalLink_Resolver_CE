@@ -1,3 +1,4 @@
+# FROM --platform=linux/amd64 node:16-alpine3.14 FOR DEPLOYMENT
 FROM node:16-alpine3.14
 
 ENV TZ=Europe/London

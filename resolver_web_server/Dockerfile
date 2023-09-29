@@ -1,9 +1,9 @@
+# FROM --platform=linux/amd64 node:16-alpine3.14 FOR DEPLOYMENT
 FROM node:16-alpine3.14
 
 ENV TZ=Europe/London
 # These two environment variables must point to the K8s DNS Service name for Mongo and Build Dync servers
 ENV MONGODBCONN="mongodb://gs1resolver:gs1resolver@resolver-mongo-service"
-ENV PORT=80
 
 # Enter the fully qualified domain name of your implementation of Resolver, which will be used in
 # certain response HTTP headers. Include the "https://" or "http://" prefix depending on your implementation.

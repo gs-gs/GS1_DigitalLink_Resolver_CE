@@ -19,7 +19,7 @@ const getDigitalLinkStructure = async (uri) => {
   let structuredObject = { result: '', error: '' };
 
   try {
-    const fetchResponse = await fetch(`http://digitallink-toolkit-service/analyseuri${uri}`);
+    const fetchResponse = await fetch(`http://localhost:3001/analyseuri${uri}`);
     const result = await fetchResponse.json();
 
     if (fetchResponse.status === 200) {

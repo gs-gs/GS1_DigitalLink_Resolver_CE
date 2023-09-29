@@ -273,7 +273,7 @@ const getDigitalLinkStructure = async (uri) => {
     SUCCESS: true,
   };
   try {
-    const uriToTest = `http://digitallink-toolkit-service/analyseuri${uri}`;
+    const uriToTest = `http://localhost:3001/analyseuri${uri}`;
     const fetchResponse = await fetch(uriToTest);
     const result = await fetchResponse.json();
     if (fetchResponse.status === 200) {

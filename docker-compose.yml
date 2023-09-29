@@ -15,6 +15,10 @@ services:
   digitallink-toolkit-service:
     build: "./digitallink_toolkit_server"
     container_name: digitallink-toolkit-server
+    ports:
+      - "3001:3001"
+    environment: 
+      - PORT=3001
     restart: always
     networks:
       - resolver-internal-network
@@ -22,6 +26,8 @@ services:
   build-sync-service:
     build: './build_sync_server'
     container_name: build-sync-server
+    ports:
+      - "3004:3004"
     environment:
       - SQLDBCONN_USER=sa
       - SQLDBCONN_PASSWORD=its@SECR3T!
@@ -30,6 +36,7 @@ services:
       - BUILD_HOSTNAME=build_job
       - DOCKER_COMPOSE_RUN=Y
       - DOCKER_RUN_INTERVAL_SECS=60
+      - PORT=3004
     depends_on:
       - resolver-mongo-service
     restart: always
@@ -39,6 +46,8 @@ services:
   dashboard-sync-service:
     build: './dashboard_sync_server'
     container_name: dashboard-sync-server
+    ports:
+      - "3003:3003"
     environment:
       - SQLDBCONN_USER=sa
       - SQLDBCONN_PASSWORD=its@SECR3T!
@@ -47,6 +56,7 @@ services:
       - BUILD_HOSTNAME=dashboard_job
       - DOCKER_COMPOSE_RUN=Y
       - DOCKER_RUN_INTERVAL_SECS=120
+      - PORT=3003
     depends_on:
       - resolver-mongo-service
     restart: always
@@ -57,11 +67,14 @@ services:
   data-entry-service:
     build: './resolver_data_entry_server'
     container_name: data-entry-server
+    ports:
+      - "3000:3000"
     environment:
       - SQLDBCONN_USER=sa
       - SQLDBCONN_PASSWORD=its@SECR3T!
       - SQLDBCONN_SERVER=sql-server
       - SQLDBCONN_DB=gs1-resolver-ce-v2-1-db
+      - PORT=3000
     depends_on:
       - resolver-mongo-service
     restart: always
@@ -71,8 +84,12 @@ services:
   id-service:
     build: './resolver_web_server'
     container_name: resolver-web-server
+    ports:
+      - "3002:3002"
     depends_on:
       - resolver-mongo-service
+    environment: 
+      - PORT=3002
     restart: always
     networks:
       - resolver-internal-network

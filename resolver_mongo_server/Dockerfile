@@ -5,6 +5,7 @@
 #     id_gs1_org/config/gs1resolver.ini
 #     data_gs1_org/config/api.ini
 
+# FROM --platform=linux/amd64 mongo:4.2-bionic FOR DEPLOYMENT
 FROM mongo:4.2-bionic
 ENV DEBIAN_FRONTEND=noninteractive
 ENV ACCEPT_EULA=Y

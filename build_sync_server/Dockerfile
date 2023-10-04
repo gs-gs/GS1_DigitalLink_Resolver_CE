@@ -33,6 +33,7 @@ RUN mkdir /buildsync
 COPY *.json /buildsync/
 WORKDIR /buildsync
 RUN npm install
+RUN npm install pm2 -g
 
 COPY src /buildsync/src
 
@@ -43,6 +44,8 @@ HEALTHCHECK CMD curl http://localhost/healthcheck || exit 1
 # container in a controlled manner is instead absorbed by NPM and the container
 # keeps going until it is forced-stopped.
 # Start app.js if in a multi-container environment, such as Dockrr Compose, Docker Swarm or Kubernetes.
-ENTRYPOINT ["node","/buildsync/src/app.js"]
+# ENTRYPOINT ["node","/buildsync/src/app.js"]
+# Restart every minute
+ENTRYPOINT ["pm2-runtime","/buildsync/src/app.js", "--cron", "*/1 * * * *"]
 # Insteaf, start index,js if in a single-container environment, such as Docker command, or cloud function.
 # ENTRYPOINT ["node","/buildsync/src/index.js"]

@@ -79,7 +79,6 @@ const createServerService = (sqlAddress: string) => {
   const containerPort = config.getNumber('containerPort') || 80;
   const cpu = config.getNumber('cpu') || 256;
   const memory = config.getNumber('memory') || 512;
-  const sqlMemory = memory * 2;
 
   // Create an ECS cluster
   const cluster = new aws.ecs.Cluster('gs1-digital-link-ecs', {});
@@ -222,7 +221,7 @@ const createServerService = (sqlAddress: string) => {
         // },
         buildSyncService: {
           image: buildSyncServer.imageUri,
-          essential: false,
+          essential: true,
           cpu: cpu,
           memory: memory,
           name: 'build-sync-service',
@@ -233,8 +232,7 @@ const createServerService = (sqlAddress: string) => {
             { name: 'SQLDBCONN_DB', value: SQL_SERVER_DB },
             { name: 'MONGODBCONN', value: MONGO_CONN },
             { name: 'BUILD_HOSTNAME', value: 'build_job' },
-            { name: 'DOCKER_COMPOSE_RUN', value: 'Y' },
-            { name: 'DOCKER_RUN_INTERVAL_SECS', value: '60' },
+            { name: 'DOCKER_COMPOSE_RUN', value: 'N' },
             { name: 'PORT', value: '3004' },
           ],
           dependsOn: [

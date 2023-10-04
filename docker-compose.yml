@@ -34,8 +34,7 @@ services:
       - SQLDBCONN_SERVER=sql-server
       - SQLDBCONN_DB=gs1-resolver-ce-v2-1-db
       - BUILD_HOSTNAME=build_job
-      - DOCKER_COMPOSE_RUN=Y
-      - DOCKER_RUN_INTERVAL_SECS=60
+      - DOCKER_COMPOSE_RUN=N
       - PORT=3004
     depends_on:
       - resolver-mongo-service

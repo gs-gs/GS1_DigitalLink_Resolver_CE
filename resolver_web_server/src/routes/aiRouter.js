@@ -21,6 +21,10 @@ aiRouterApp.use('/gtin', processGTINDigitalLinkRouter);
 aiRouterApp.use('/03', processDigitalLinkRouter);
 aiRouterApp.use('/nlisid', processDigitalLinkRouter);
 
+// The Livestock Consignments ID
+aiRouterApp.use('/04', processDigitalLinkRouter);
+aiRouterApp.use("/consignment_id", processDigitalLinkRouter);
+
 // Global Location Number (GLN)
 aiRouterApp.use('/414', processDigitalLinkRouter);
 aiRouterApp.use('/gln', processDigitalLinkRouter);

@@ -47,6 +47,15 @@ class GS1DigitalLinkToolkit {
         regex: '^[A-Za-z0-9]{16}$',
       },
       {
+        title: 'The Livestock Consignments ID',
+        label: 'Consignments',
+        shortcode: 'consignment_id',
+        ai: '04',
+        type: 'I',
+        fixedLength: false,
+        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]){0,20}',
+      },
+      {
         title: 'Batch or lot number',
         label: 'BATCH/LOT',
         shortcode: 'lot',

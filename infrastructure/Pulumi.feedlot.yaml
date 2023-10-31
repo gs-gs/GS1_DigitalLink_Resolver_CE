@@ -1,0 +1,12 @@
+config:
+  aws:region: ap-southeast-2
+  gs1-digital-link:SQL_SERVER_DATABASE:
+    secure: AAABANjSnlmvhba9AfLVEBHDknFJgfMe1zNkPlVYLdpPND/ztotzjqh9xmzjKg==
+  gs1-digital-link:SQL_SERVER_PASSWORD:
+    secure: AAABACLbw2lQhzMkzGdfXdiwJF1LSxgbQ2I560LVnfTilMzNvRBKvA==
+  gs1-digital-link:SQL_SERVER_USERNAME:
+    secure: AAABAEmR8uGv5FE4V9Sp8EAGxs784Q/WGlvSnc7W5B8Dxg==
+  gs1-digital-link:containerPort: "80"
+  gs1-digital-link:cpu: "256"
+  gs1-digital-link:dlr-domain: "feedlot.dlr.agtrace.showthething.com"
+  gs1-digital-link:memory: "512"

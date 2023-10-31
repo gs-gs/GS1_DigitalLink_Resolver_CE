@@ -1,5 +1,12 @@
 config:
   aws:region: ap-southeast-2
+  gs1-digital-link:SQL_SERVER_DATABASE:
+    secure: AAABAI5eFUbQuBHjyK6GO8XJtKjdRgktXbktusuUYSpMo3N1VUQ2XXjXZA==
+  gs1-digital-link:SQL_SERVER_PASSWORD:
+    secure: AAABAOivKvQCF9IaxbfRS1XsYdWwBmu8toZ/7mpO+FAba0yJmySidg==
+  gs1-digital-link:SQL_SERVER_USERNAME:
+    secure: AAABAHAoL91y7G421e0BnGTLe4EH4fWwzDAeKjNgEcA0Hw==
   gs1-digital-link:containerPort: "80"
   gs1-digital-link:cpu: "256"
+  gs1-digital-link:dlr-domain: "farm.dlr.agtrace.showthething.com"
   gs1-digital-link:memory: "512"

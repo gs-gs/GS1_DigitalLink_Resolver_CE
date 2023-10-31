@@ -2,7 +2,7 @@ import * as pulumi from '@pulumi/pulumi';
 import * as awsx from '@pulumi/awsx';
 import * as aws from '@pulumi/aws';
 import { ApplicationLoadBalancerArgs } from '@pulumi/awsx/lb';
-import { sqlInstance } from './databaseConfig';
+import { sqlInstanceAddress } from './databaseConfig';
 require('dotenv').config();
 
 const createLoadBalancerWithDomain = (
@@ -79,6 +79,13 @@ const createServerService = (sqlAddress: string) => {
   const containerPort = config.getNumber('containerPort') || 80;
   const cpu = config.getNumber('cpu') || 256;
   const memory = config.getNumber('memory') || 512;
+  const DLR_RECORD = config.get('dlr-domain');
+  const SQL_SERVER_DB = config.getSecret('SQL_SERVER_DATABASE');
+  const SQL_SERVER_USERNAME = config.getSecret('SQL_SERVER_USERNAME');
+  const SQL_SERVER_PASSWORD = config.getSecret('SQL_SERVER_PASSWORD');
+  if (!DLR_RECORD) {
+    throw new Error('DLR_RECORD must be set');
+  }
 
   // Create an ECS cluster
   const cluster = new aws.ecs.Cluster('gs1-digital-link-ecs', {});
@@ -93,14 +100,9 @@ const createServerService = (sqlAddress: string) => {
   const buildSyncServer = createImage('build_sync_server');
   const resolverMongoServer = createImage('resolver_mongo_server');
   // const resolverSqlServer = createImage('resolver_sql_server');
-  const SQL_SERVER_USERNAME = process.env.SQL_SERVER_USERNAME!;
-  const SQL_SERVER_PASSWORD = process.env.SQL_SERVER_PASSWORD!;
-  const SQL_SERVER_DB = process.env.SQL_SERVER_DATABASE!;
-  const SQL_SERVER_PORT = +process.env.SQL_SERVER_PORT!;
   const MONGO_DB_PORT = +process.env.MONGO_PORT!;
   const MONGO_DB_USERNAME = process.env.MONGO_USERNAME!;
   const MONGO_DB_PASSWORD = process.env.MONGO_PASSWORD!;
-  const DLR_RECORD = process.env.DLR_RECORD!;
   const HOSTED_ZONE_ID = process.env.HOSTED_ZONE_ID!;
   const MONGO_CONN = `mongodb://${MONGO_DB_USERNAME}:${MONGO_DB_PASSWORD}@localhost:${MONGO_DB_PORT}/?authSource=admin&readPreference=primary&directConnection=true&ssl=false`;
 
@@ -244,7 +246,6 @@ const createServerService = (sqlAddress: string) => {
     desiredCount: 1,
   });
 };
-
-pulumi.all([sqlInstance.address]).apply(([sqlAddress]) => {
-  createServerService(sqlAddress);
+sqlInstanceAddress.then((sqlInstanceAddress) => {
+  createServerService(sqlInstanceAddress);
 });

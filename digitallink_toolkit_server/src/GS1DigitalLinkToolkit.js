@@ -23,7 +23,7 @@ class GS1DigitalLinkToolkit {
         type: 'I',
         fixedLength: true,
         checkDigit: 'L',
-        qualifiers: ['22', '10', '21'],
+        qualifiers: ['22', '10', '3101', '13', '21'],
         regex: '(\\d{12,14}|\\d{8})',
       },
       {
@@ -53,7 +53,8 @@ class GS1DigitalLinkToolkit {
         ai: '04',
         type: 'I',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]){0,20}',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]){0,20}',
       },
       {
         title: 'Batch or lot number',
@@ -63,7 +64,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..20',
         type: 'Q',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
       },
       {
         title: 'Production date (YYMMDD)',
@@ -137,7 +139,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..20',
         type: 'Q',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
       },
       {
         title: 'Consumer product variant',
@@ -147,7 +150,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..20',
         type: 'Q',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
       },
       {
         title: 'Additional product identification assigned by the manufacturer',
@@ -156,7 +160,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..30',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
       },
       {
         title: 'Customer part number',
@@ -165,7 +170,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..30',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
       },
       {
         title: 'Made-to-Order variation number',
@@ -183,7 +189,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..20',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
       },
       {
         title: 'Secondary serial number',
@@ -192,7 +199,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..30',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
       },
       {
         title: 'Reference to source entity',
@@ -201,7 +209,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..30',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
       },
       {
         title: 'Global Document Type Identifier (GDTI)',
@@ -212,7 +221,8 @@ class GS1DigitalLinkToolkit {
         type: 'I',
         fixedLength: false,
         checkDigit: '13',
-        regex: '(\\d{13})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,17})',
+        regex:
+          '(\\d{13})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,17})',
       },
       {
         title: 'GLN extension component',
@@ -222,7 +232,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..20',
         type: 'Q',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
       },
       {
         title: 'Global Coupon Number (GCN)',
@@ -299,7 +310,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Length or first dimension, metres (variable measure trade item)',
+        title:
+          'Length or first dimension, metres (variable measure trade item)',
         label: 'LENGTH (m)',
         ai: '3110',
         format: 'N6',
@@ -308,7 +320,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Length or first dimension, metres (variable measure trade item)',
+        title:
+          'Length or first dimension, metres (variable measure trade item)',
         label: 'LENGTH (m)',
         ai: '3111',
         format: 'N6',
@@ -317,7 +330,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Length or first dimension, metres (variable measure trade item)',
+        title:
+          'Length or first dimension, metres (variable measure trade item)',
         label: 'LENGTH (m)',
         ai: '3112',
         format: 'N6',
@@ -326,7 +340,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Length or first dimension, metres (variable measure trade item)',
+        title:
+          'Length or first dimension, metres (variable measure trade item)',
         label: 'LENGTH (m)',
         ai: '3113',
         format: 'N6',
@@ -335,7 +350,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Length or first dimension, metres (variable measure trade item)',
+        title:
+          'Length or first dimension, metres (variable measure trade item)',
         label: 'LENGTH (m)',
         ai: '3114',
         format: 'N6',
@@ -344,7 +360,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Length or first dimension, metres (variable measure trade item)',
+        title:
+          'Length or first dimension, metres (variable measure trade item)',
         label: 'LENGTH (m)',
         ai: '3115',
         format: 'N6',
@@ -353,7 +370,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, metres (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, metres (variable measure trade item)',
         label: 'WIDTH (m)',
         ai: '3120',
         format: 'N6',
@@ -362,7 +380,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, metres (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, metres (variable measure trade item)',
         label: 'WIDTH (m)',
         ai: '3121',
         format: 'N6',
@@ -371,7 +390,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, metres (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, metres (variable measure trade item)',
         label: 'WIDTH (m)',
         ai: '3122',
         format: 'N6',
@@ -380,7 +400,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, metres (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, metres (variable measure trade item)',
         label: 'WIDTH (m)',
         ai: '3123',
         format: 'N6',
@@ -389,7 +410,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, metres (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, metres (variable measure trade item)',
         label: 'WIDTH (m)',
         ai: '3124',
         format: 'N6',
@@ -398,7 +420,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, metres (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, metres (variable measure trade item)',
         label: 'WIDTH (m)',
         ai: '3125',
         format: 'N6',
@@ -407,7 +430,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, metres (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, metres (variable measure trade item)',
         label: 'HEIGHT (m)',
         ai: '3130',
         format: 'N6',
@@ -416,7 +440,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, metres (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, metres (variable measure trade item)',
         label: 'HEIGHT (m)',
         ai: '3131',
         format: 'N6',
@@ -425,7 +450,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, metres (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, metres (variable measure trade item)',
         label: 'HEIGHT (m)',
         ai: '3132',
         format: 'N6',
@@ -434,7 +460,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, metres (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, metres (variable measure trade item)',
         label: 'HEIGHT (m)',
         ai: '3133',
         format: 'N6',
@@ -443,7 +470,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, metres (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, metres (variable measure trade item)',
         label: 'HEIGHT (m)',
         ai: '3134',
         format: 'N6',
@@ -452,7 +480,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, metres (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, metres (variable measure trade item)',
         label: 'HEIGHT (m)',
         ai: '3135',
         format: 'N6',
@@ -677,7 +706,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Length or first dimension, inches (variable measure trade item)',
+        title:
+          'Length or first dimension, inches (variable measure trade item)',
         label: 'LENGTH (in)',
         ai: '3210',
         format: 'N6',
@@ -686,7 +716,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Length or first dimension, inches (variable measure trade item)',
+        title:
+          'Length or first dimension, inches (variable measure trade item)',
         label: 'LENGTH (in)',
         ai: '3211',
         format: 'N6',
@@ -695,7 +726,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Length or first dimension, inches (variable measure trade item)',
+        title:
+          'Length or first dimension, inches (variable measure trade item)',
         label: 'LENGTH (in)',
         ai: '3212',
         format: 'N6',
@@ -704,7 +736,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Length or first dimension, inches (variable measure trade item)',
+        title:
+          'Length or first dimension, inches (variable measure trade item)',
         label: 'LENGTH (in)',
         ai: '3213',
         format: 'N6',
@@ -713,7 +746,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Length or first dimension, inches (variable measure trade item)',
+        title:
+          'Length or first dimension, inches (variable measure trade item)',
         label: 'LENGTH (in)',
         ai: '3214',
         format: 'N6',
@@ -722,7 +756,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Length or first dimension, inches (variable measure trade item)',
+        title:
+          'Length or first dimension, inches (variable measure trade item)',
         label: 'LENGTH (in)',
         ai: '3215',
         format: 'N6',
@@ -839,7 +874,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, inches (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, inches (variable measure trade item)',
         label: 'WIDTH (in)',
         ai: '3240',
         format: 'N6',
@@ -848,7 +884,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, inches (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, inches (variable measure trade item)',
         label: 'WIDTH (in)',
         ai: '3241',
         format: 'N6',
@@ -857,7 +894,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, inches (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, inches (variable measure trade item)',
         label: 'WIDTH (in)',
         ai: '3242',
         format: 'N6',
@@ -866,7 +904,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, inches (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, inches (variable measure trade item)',
         label: 'WIDTH (in)',
         ai: '3243',
         format: 'N6',
@@ -875,7 +914,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, inches (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, inches (variable measure trade item)',
         label: 'WIDTH (in)',
         ai: '3244',
         format: 'N6',
@@ -884,7 +924,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, inches (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, inches (variable measure trade item)',
         label: 'WIDTH (in)',
         ai: '3245',
         format: 'N6',
@@ -893,7 +934,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, feet (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, feet (variable measure trade item)',
         label: 'WIDTH (ft)',
         ai: '3250',
         format: 'N6',
@@ -902,7 +944,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, feet (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, feet (variable measure trade item)',
         label: 'WIDTH (ft)',
         ai: '3251',
         format: 'N6',
@@ -911,7 +954,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, feet (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, feet (variable measure trade item)',
         label: 'WIDTH (ft)',
         ai: '3252',
         format: 'N6',
@@ -920,7 +964,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, feet (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, feet (variable measure trade item)',
         label: 'WIDTH (ft)',
         ai: '3253',
         format: 'N6',
@@ -929,7 +974,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, feet (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, feet (variable measure trade item)',
         label: 'WIDTH (ft)',
         ai: '3254',
         format: 'N6',
@@ -938,7 +984,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, feet (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, feet (variable measure trade item)',
         label: 'WIDTH (ft)',
         ai: '3255',
         format: 'N6',
@@ -947,7 +994,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, yards (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, yards (variable measure trade item)',
         label: 'WIDTH (yd)',
         ai: '3260',
         format: 'N6',
@@ -956,7 +1004,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, yards (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, yards (variable measure trade item)',
         label: 'WIDTH (yd)',
         ai: '3261',
         format: 'N6',
@@ -965,7 +1014,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, yards (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, yards (variable measure trade item)',
         label: 'WIDTH (yd)',
         ai: '3262',
         format: 'N6',
@@ -974,7 +1024,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, yards (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, yards (variable measure trade item)',
         label: 'WIDTH (yd)',
         ai: '3263',
         format: 'N6',
@@ -983,7 +1034,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, yards (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, yards (variable measure trade item)',
         label: 'WIDTH (yd)',
         ai: '3264',
         format: 'N6',
@@ -992,7 +1044,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Width, diameter, or second dimension, yards (variable measure trade item)',
+        title:
+          'Width, diameter, or second dimension, yards (variable measure trade item)',
         label: 'WIDTH (yd)',
         ai: '3265',
         format: 'N6',
@@ -1001,7 +1054,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, inches (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, inches (variable measure trade item)',
         label: 'HEIGHT (in)',
         ai: '3270',
         format: 'N6',
@@ -1010,7 +1064,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, inches (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, inches (variable measure trade item)',
         label: 'HEIGHT (in)',
         ai: '3271',
         format: 'N6',
@@ -1019,7 +1074,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, inches (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, inches (variable measure trade item)',
         label: 'HEIGHT (in)',
         ai: '3272',
         format: 'N6',
@@ -1028,7 +1084,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, inches (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, inches (variable measure trade item)',
         label: 'HEIGHT (in)',
         ai: '3273',
         format: 'N6',
@@ -1037,7 +1094,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, inches (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, inches (variable measure trade item)',
         label: 'HEIGHT (in)',
         ai: '3274',
         format: 'N6',
@@ -1046,7 +1104,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, inches (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, inches (variable measure trade item)',
         label: 'HEIGHT (in)',
         ai: '3275',
         format: 'N6',
@@ -1055,7 +1114,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, feet (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, feet (variable measure trade item)',
         label: 'HEIGHT (ft)',
         ai: '3280',
         format: 'N6',
@@ -1064,7 +1124,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, feet (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, feet (variable measure trade item)',
         label: 'HEIGHT (ft)',
         ai: '3281',
         format: 'N6',
@@ -1073,7 +1134,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, feet (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, feet (variable measure trade item)',
         label: 'HEIGHT (ft)',
         ai: '3282',
         format: 'N6',
@@ -1082,7 +1144,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, feet (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, feet (variable measure trade item)',
         label: 'HEIGHT (ft)',
         ai: '3283',
         format: 'N6',
@@ -1091,7 +1154,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, feet (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, feet (variable measure trade item)',
         label: 'HEIGHT (ft)',
         ai: '3284',
         format: 'N6',
@@ -1100,7 +1164,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, feet (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, feet (variable measure trade item)',
         label: 'HEIGHT (ft)',
         ai: '3285',
         format: 'N6',
@@ -1109,7 +1174,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, yards (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, yards (variable measure trade item)',
         label: 'HEIGHT (yd)',
         ai: '3290',
         format: 'N6',
@@ -1118,7 +1184,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, yards (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, yards (variable measure trade item)',
         label: 'HEIGHT (yd)',
         ai: '3291',
         format: 'N6',
@@ -1127,7 +1194,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, yards (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, yards (variable measure trade item)',
         label: 'HEIGHT (yd)',
         ai: '3292',
         format: 'N6',
@@ -1136,7 +1204,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, yards (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, yards (variable measure trade item)',
         label: 'HEIGHT (yd)',
         ai: '3293',
         format: 'N6',
@@ -1145,7 +1214,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, yards (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, yards (variable measure trade item)',
         label: 'HEIGHT (yd)',
         ai: '3294',
         format: 'N6',
@@ -1154,7 +1224,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{6})',
       },
       {
-        title: 'Depth, thickness, height, or third dimension, yards (variable measure trade item)',
+        title:
+          'Depth, thickness, height, or third dimension, yards (variable measure trade item)',
         label: 'HEIGHT (yd)',
         ai: '3295',
         format: 'N6',
@@ -3296,7 +3367,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{3})(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable, single monetary area (variable measure trade item)',
+        title:
+          'Applicable amount payable, single monetary area (variable measure trade item)',
         label: 'PRICE',
         ai: '3920',
         format: 'N..15',
@@ -3305,7 +3377,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable, single monetary area (variable measure trade item)',
+        title:
+          'Applicable amount payable, single monetary area (variable measure trade item)',
         label: 'PRICE',
         ai: '3921',
         format: 'N..15',
@@ -3314,7 +3387,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable, single monetary area (variable measure trade item)',
+        title:
+          'Applicable amount payable, single monetary area (variable measure trade item)',
         label: 'PRICE',
         ai: '3922',
         format: 'N..15',
@@ -3323,7 +3397,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable, single monetary area (variable measure trade item)',
+        title:
+          'Applicable amount payable, single monetary area (variable measure trade item)',
         label: 'PRICE',
         ai: '3923',
         format: 'N..15',
@@ -3332,7 +3407,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable, single monetary area (variable measure trade item)',
+        title:
+          'Applicable amount payable, single monetary area (variable measure trade item)',
         label: 'PRICE',
         ai: '3924',
         format: 'N..15',
@@ -3341,7 +3417,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable, single monetary area (variable measure trade item)',
+        title:
+          'Applicable amount payable, single monetary area (variable measure trade item)',
         label: 'PRICE',
         ai: '3925',
         format: 'N..15',
@@ -3350,7 +3427,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable, single monetary area (variable measure trade item)',
+        title:
+          'Applicable amount payable, single monetary area (variable measure trade item)',
         label: 'PRICE',
         ai: '3926',
         format: 'N..15',
@@ -3359,7 +3437,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable, single monetary area (variable measure trade item)',
+        title:
+          'Applicable amount payable, single monetary area (variable measure trade item)',
         label: 'PRICE',
         ai: '3927',
         format: 'N..15',
@@ -3368,7 +3447,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable, single monetary area (variable measure trade item)',
+        title:
+          'Applicable amount payable, single monetary area (variable measure trade item)',
         label: 'PRICE',
         ai: '3928',
         format: 'N..15',
@@ -3377,7 +3457,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable, single monetary area (variable measure trade item)',
+        title:
+          'Applicable amount payable, single monetary area (variable measure trade item)',
         label: 'PRICE',
         ai: '3929',
         format: 'N..15',
@@ -3386,7 +3467,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable with ISO currency code (variable measure trade item)',
+        title:
+          'Applicable amount payable with ISO currency code (variable measure trade item)',
         label: 'PRICE',
         ai: '3930',
         format: 'N..15',
@@ -3395,7 +3477,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{3})(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable with ISO currency code (variable measure trade item)',
+        title:
+          'Applicable amount payable with ISO currency code (variable measure trade item)',
         label: 'PRICE',
         ai: '3931',
         format: 'N..15',
@@ -3404,7 +3487,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{3})(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable with ISO currency code (variable measure trade item)',
+        title:
+          'Applicable amount payable with ISO currency code (variable measure trade item)',
         label: 'PRICE',
         ai: '3932',
         format: 'N..15',
@@ -3413,7 +3497,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{3})(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable with ISO currency code (variable measure trade item)',
+        title:
+          'Applicable amount payable with ISO currency code (variable measure trade item)',
         label: 'PRICE',
         ai: '3933',
         format: 'N..15',
@@ -3422,7 +3507,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{3})(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable with ISO currency code (variable measure trade item)',
+        title:
+          'Applicable amount payable with ISO currency code (variable measure trade item)',
         label: 'PRICE',
         ai: '3934',
         format: 'N..15',
@@ -3431,7 +3517,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{3})(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable with ISO currency code (variable measure trade item)',
+        title:
+          'Applicable amount payable with ISO currency code (variable measure trade item)',
         label: 'PRICE',
         ai: '3935',
         format: 'N..15',
@@ -3440,7 +3527,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{3})(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable with ISO currency code (variable measure trade item)',
+        title:
+          'Applicable amount payable with ISO currency code (variable measure trade item)',
         label: 'PRICE',
         ai: '3936',
         format: 'N..15',
@@ -3449,7 +3537,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{3})(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable with ISO currency code (variable measure trade item)',
+        title:
+          'Applicable amount payable with ISO currency code (variable measure trade item)',
         label: 'PRICE',
         ai: '3937',
         format: 'N..15',
@@ -3458,7 +3547,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{3})(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable with ISO currency code (variable measure trade item)',
+        title:
+          'Applicable amount payable with ISO currency code (variable measure trade item)',
         label: 'PRICE',
         ai: '3938',
         format: 'N..15',
@@ -3467,7 +3557,8 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{3})(\\d{0,15})',
       },
       {
-        title: 'Applicable amount payable with ISO currency code (variable measure trade item)',
+        title:
+          'Applicable amount payable with ISO currency code (variable measure trade item)',
         label: 'PRICE',
         ai: '3939',
         format: 'N..15',
@@ -3518,7 +3609,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..30',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
       },
       {
         title: 'Global Identification Number for Consignment (GINC)',
@@ -3528,7 +3620,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..30',
         type: 'I',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
       },
       {
         title: 'Global Shipment Identification Number (GSIN)',
@@ -3548,7 +3641,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..30',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
       },
       {
         title: 'Ship to - Deliver to Global Location Number',
@@ -3635,13 +3729,15 @@ class GS1DigitalLinkToolkit {
         regex: '(\\d{13})',
       },
       {
-        title: 'Ship to - Deliver to postal code within a single postal authority',
+        title:
+          'Ship to - Deliver to postal code within a single postal authority',
         label: 'SHIP TO POST',
         ai: '420',
         format: 'X..20',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
       },
       {
         title: 'Ship to - Deliver to postal code with ISO country code',
@@ -3650,7 +3746,8 @@ class GS1DigitalLinkToolkit {
         format: 'N3+X..9',
         type: 'D',
         fixedLength: false,
-        regex: '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,9})',
+        regex:
+          '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,9})',
       },
       {
         title: 'Country of origin of a trade item',
@@ -3704,7 +3801,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..3',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,3})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,3})',
       },
       {
         title: 'NATO Stock Number (NSN)',
@@ -3722,7 +3820,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..30',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
       },
       {
         title: 'Expiration date and time',
@@ -3750,7 +3849,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..12',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,12})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,12})',
       },
       {
         title: 'First freeze date ',
@@ -3777,7 +3877,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..3',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,3})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,3})',
       },
       {
         title: 'Fishing gear type',
@@ -3786,7 +3887,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..10',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,10})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,10})',
       },
       {
         title: 'Production method',
@@ -3795,7 +3897,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..2',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,2})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,2})',
       },
       {
         title: 'Refurbishment lot ID',
@@ -3804,7 +3907,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..20',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
       },
       {
         title: 'Functional status',
@@ -3813,7 +3917,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..20',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
       },
       {
         title: 'Revision status',
@@ -3822,7 +3927,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..20',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
       },
       {
         title: 'Global Individual Asset Identifier (GIAI) of an assembly',
@@ -3831,7 +3937,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..30',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
       },
       {
         title: 'Number of processor with ISO Country Code',
@@ -3840,7 +3947,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..27',
         type: 'D',
         fixedLength: false,
-        regex: '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
+        regex:
+          '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
       },
       {
         title: 'Number of processor with ISO Country Code',
@@ -3849,7 +3957,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..27',
         type: 'D',
         fixedLength: false,
-        regex: '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
+        regex:
+          '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
       },
       {
         title: 'Number of processor with ISO Country Code',
@@ -3858,7 +3967,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..27',
         type: 'D',
         fixedLength: false,
-        regex: '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
+        regex:
+          '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
       },
       {
         title: 'Number of processor with ISO Country Code',
@@ -3867,7 +3977,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..27',
         type: 'D',
         fixedLength: false,
-        regex: '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
+        regex:
+          '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
       },
       {
         title: 'Number of processor with ISO Country Code',
@@ -3876,7 +3987,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..27',
         type: 'D',
         fixedLength: false,
-        regex: '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
+        regex:
+          '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
       },
       {
         title: 'Number of processor with ISO Country Code',
@@ -3885,7 +3997,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..27',
         type: 'D',
         fixedLength: false,
-        regex: '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
+        regex:
+          '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
       },
       {
         title: 'Number of processor with ISO Country Code',
@@ -3894,7 +4007,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..27',
         type: 'D',
         fixedLength: false,
-        regex: '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
+        regex:
+          '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
       },
       {
         title: 'Number of processor with ISO Country Code',
@@ -3903,7 +4017,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..27',
         type: 'D',
         fixedLength: false,
-        regex: '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
+        regex:
+          '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
       },
       {
         title: 'Number of processor with ISO Country Code',
@@ -3912,7 +4027,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..27',
         type: 'D',
         fixedLength: false,
-        regex: '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
+        regex:
+          '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
       },
       {
         title: 'Number of processor with ISO Country Code',
@@ -3921,7 +4037,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..27',
         type: 'D',
         fixedLength: false,
-        regex: '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
+        regex:
+          '(\\d{3})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,27})',
       },
       {
         title: 'National Healthcare Reimbursement Number (NHRN) - Germany PZN',
@@ -3930,7 +4047,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..20',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
       },
       {
         title: 'National Healthcare Reimbursement Number (NHRN) - France CIP',
@@ -3939,7 +4057,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..20',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
       },
       {
         title: 'National Healthcare Reimbursement Number (NHRN) - Spain CN',
@@ -3948,7 +4067,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..20',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
       },
       {
         title: 'National Healthcare Reimbursement Number (NHRN) - Brasil DRN',
@@ -3957,7 +4077,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..20',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
       },
       {
         title: 'National Healthcare Reimbursement Number (NHRN) - Portugal AIM',
@@ -3966,7 +4087,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..20',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
       },
       {
         title: 'Certification reference # 0',
@@ -3975,7 +4097,8 @@ class GS1DigitalLinkToolkit {
         format: 'X2+X..28',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
       },
       {
         title: 'Certification reference # 1',
@@ -3984,7 +4107,8 @@ class GS1DigitalLinkToolkit {
         format: 'X2+X..28',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
       },
       {
         title: 'Certification reference # 2',
@@ -3993,7 +4117,8 @@ class GS1DigitalLinkToolkit {
         format: 'X2+X..28',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
       },
       {
         title: 'Certification reference # 3',
@@ -4002,7 +4127,8 @@ class GS1DigitalLinkToolkit {
         format: 'X2+X..28',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
       },
       {
         title: 'Certification reference # 4',
@@ -4011,7 +4137,8 @@ class GS1DigitalLinkToolkit {
         format: 'X2+X..28',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
       },
       {
         title: 'Certification reference # 5',
@@ -4020,7 +4147,8 @@ class GS1DigitalLinkToolkit {
         format: 'X2+X..28',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
       },
       {
         title: 'Certification reference # 6',
@@ -4029,7 +4157,8 @@ class GS1DigitalLinkToolkit {
         format: 'X2+X..28',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
       },
       {
         title: 'Certification reference # 7',
@@ -4038,7 +4167,8 @@ class GS1DigitalLinkToolkit {
         format: 'X2+X..28',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
       },
       {
         title: 'Certification reference # 8',
@@ -4047,7 +4177,8 @@ class GS1DigitalLinkToolkit {
         format: 'X2+X..28',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
       },
       {
         title: 'Certification reference # 9',
@@ -4056,10 +4187,12 @@ class GS1DigitalLinkToolkit {
         format: 'X2+X..28',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{2,30})',
       },
       {
-        title: 'Roll products (width, length, core diameter, direction, splices)',
+        title:
+          'Roll products (width, length, core diameter, direction, splices)',
         label: 'DIMENSIONS',
         ai: '8001',
         format: 'N14',
@@ -4074,7 +4207,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..20',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
       },
       {
         title: 'Global Returnable Asset Identifier (GRAI)',
@@ -4085,7 +4219,8 @@ class GS1DigitalLinkToolkit {
         type: 'I',
         fixedLength: false,
         checkDigit: '14',
-        regex: '(\\d{14})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,16})',
+        regex:
+          '(\\d{14})([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,16})',
       },
       {
         title: 'Global Individual Asset Identifier (GIAI)',
@@ -4095,7 +4230,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..30',
         type: 'I',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
       },
       {
         title: 'Price per unit of measure',
@@ -4125,7 +4261,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..34',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,34})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,34})',
       },
       {
         title: 'Date and time of production',
@@ -4143,7 +4280,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..50',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,50})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,50})',
       },
       {
         title: 'Component/Part Identifier (CPID)',
@@ -4173,16 +4311,19 @@ class GS1DigitalLinkToolkit {
         format: 'X..20',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,20})',
       },
       {
         title: 'Global Model Number (GMN)',
-        label: 'GMN (for medical devices, the default, global data title is BUDI-DI )',
+        label:
+          'GMN (for medical devices, the default, global data title is BUDI-DI )',
         ai: '8013',
         format: 'X..30',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
       },
       {
         title: 'Global Service Relation Number - Provider',
@@ -4225,10 +4366,12 @@ class GS1DigitalLinkToolkit {
         format: 'X..25',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,25})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,25})',
       },
       {
-        title: 'Identification of pieces of a trade item contained in a logistics unit',
+        title:
+          'Identification of pieces of a trade item contained in a logistics unit',
         label: 'ITIP CONTENT',
         ai: '8026',
         format: 'N14+N2+N2',
@@ -4243,7 +4386,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..70',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,70})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,70})',
       },
       {
         title: 'Loyalty points of a coupon',
@@ -4260,7 +4404,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..70',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,70})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,70})',
       },
       {
         title: 'Extended Packaging URL ',
@@ -4269,7 +4414,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..70',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,70})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,70})',
       },
       {
         title: 'Information mutually agreed between trading partners',
@@ -4278,7 +4424,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..30',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,30})',
       },
       {
         title: 'Company internal information',
@@ -4287,7 +4434,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..90',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,90})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,90})',
       },
       {
         title: 'Company internal information',
@@ -4296,7 +4444,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..90',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,90})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,90})',
       },
       {
         title: 'Company internal information',
@@ -4305,7 +4454,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..90',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,90})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,90})',
       },
       {
         title: 'Company internal information',
@@ -4314,7 +4464,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..90',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,90})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,90})',
       },
       {
         title: 'Company internal information',
@@ -4323,7 +4474,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..90',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,90})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,90})',
       },
       {
         title: 'Company internal information',
@@ -4332,7 +4484,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..90',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,90})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,90})',
       },
       {
         title: 'Company internal information',
@@ -4341,7 +4494,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..90',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,90})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,90})',
       },
       {
         title: 'Company internal information',
@@ -4350,7 +4504,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..90',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,90})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,90})',
       },
       {
         title: 'Company internal information',
@@ -4359,7 +4514,8 @@ class GS1DigitalLinkToolkit {
         format: 'X..90',
         type: 'D',
         fixedLength: false,
-        regex: '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,90})',
+        regex:
+          '([\\x21-\\x22\\x25-\\x2F\\x30-\\x39\\x41-\\x5A\\x5F\\x61-\\x7A]{0,90})',
       },
     ];
 
@@ -5106,7 +5262,10 @@ class GS1DigitalLinkToolkit {
 
     // pathSequenceConstraints is used to ensure that for those primary identification keys in which multiple key qualifiers may appear in the URI path information, they SHALL appear in the expected order
     // note that currently only GTIN (01) and ITIP (8006)  have more than one permitted key qualifier
-    const pathSequenceConstraints = { '01': ['22', '10', '21'], 8006: ['22', '10', '21'] };
+    const pathSequenceConstraints = {
+      '01': ['22', '10', '3101', '13', '21'],
+      8006: ['22', '10', '21'],
+    };
 
     const stringSemantics = {
       '01': ['gs1:gtin', 'schema:gtin'],
@@ -5452,7 +5611,8 @@ class GS1DigitalLinkToolkit {
     };
 
     // safeBase64Alphabet is a modified URI-safe Base64 alphabet used in the compression methods for converting the binary string to/from an alphanumeric representation that contains no characters that are restricted in URIs
-    const safeBase64Alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
+    const safeBase64Alphabet =
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
 
     const hexAlphabet = '0123456789ABCDEF';
 
@@ -5464,7 +5624,9 @@ class GS1DigitalLinkToolkit {
     const tableOptReverse = {};
     let tableOptKeys = Object.keys(tableOpt);
     for (let i in tableOptKeys) {
-      tableOptReverse[JSON.stringify(tableOpt[tableOptKeys[i]].slice(0).sort())] = tableOptKeys[i];
+      tableOptReverse[
+        JSON.stringify(tableOpt[tableOptKeys[i]].slice(0).sort())
+      ] = tableOptKeys[i];
     }
 
     const aiRegex = {};
@@ -5593,8 +5755,7 @@ class GS1DigitalLinkToolkit {
         condition2: ['01'],
       },
       {
-        rule:
-          'GTIN of contained trade items is intended to list the trade items contained in a logistic unit, and SHALL NOT be used to identify the contents of a trade item',
+        rule: 'GTIN of contained trade items is intended to list the trade items contained in a logistic unit, and SHALL NOT be used to identify the contents of a trade item',
         condition1: '02',
         condition2: ['01'],
       },
@@ -5603,15 +5764,18 @@ class GS1DigitalLinkToolkit {
         condition1: '37',
         condition2: ['01'],
       },
-      { rule: 'A trade item SHALL NOT be identified as a coupon.', condition1: '255', condition2: ['01'] },
+      {
+        rule: 'A trade item SHALL NOT be identified as a coupon.',
+        condition1: '255',
+        condition2: ['01'],
+      },
       {
         rule: 'Only one ship to postal code SHALL be applied on the same physical entity',
         condition1: '420',
         condition2: ['421'],
       },
       {
-        rule:
-          'Country of origin, initial processing, processing, or disassembly SHALL NOT be used in combination with country of full porcessing, since this would lead to ambiguous data.',
+        rule: 'Country of origin, initial processing, processing, or disassembly SHALL NOT be used in combination with country of full porcessing, since this would lead to ambiguous data.',
         condition1: '426',
         condition2: ['422', '423', '424', '425'],
       },
@@ -5636,14 +5800,12 @@ class GS1DigitalLinkToolkit {
         condition2: ['8111'],
       },
       {
-        rule:
-          'The GTIN SHALL NOT be used in combination with the identification of an individual trade item piece.  The GTIN of the trade item to which the individual trade item piece belongs is contained in the element string',
+        rule: 'The GTIN SHALL NOT be used in combination with the identification of an individual trade item piece.  The GTIN of the trade item to which the individual trade item piece belongs is contained in the element string',
         condition1: '8006',
         condition2: ['01'],
       },
       {
-        rule:
-          'Only one Global Service Relation Number (recipient of provider) SHALL be applied at one time for identification of an individual in a given service relationship',
+        rule: 'Only one Global Service Relation Number (recipient of provider) SHALL be applied at one time for identification of an individual in a given service relationship',
         condition1: '8018',
         condition2: ['8017'],
       },
@@ -5656,8 +5818,7 @@ class GS1DigitalLinkToolkit {
     const mandatoryAssociations = [
       {
         designation: 'GTIN of a variable measure trade item scanned at POS',
-        rule:
-          'The GTIN of a variable measure trade item scanned at POS SHALL occur in combination with: * variable count of items; or * a trade measure ; Note: Master data will be needed to determine whether the GTIN represents a variable measure trade item scanned at POS. Also see the note below this table.',
+        rule: 'The GTIN of a variable measure trade item scanned at POS SHALL occur in combination with: * variable count of items; or * a trade measure ; Note: Master data will be needed to determine whether the GTIN represents a variable measure trade item scanned at POS. Also see the note below this table.',
         condition: ['01'],
         conditionN1: '0',
         OR: ['30', '3d{3}'],
@@ -5665,16 +5826,14 @@ class GS1DigitalLinkToolkit {
 
       {
         designation: 'GTIN of a variable measure trade item not scanned at POS',
-        rule:
-          "The GTIN of a variable measure trade item not scanned at POS SHALL occur in combination with: * variable count of items; or * a trade measure; or * the dimensions of a roll product. Note: The first position of the GTIN is '9' for such trade items. Also see the note below this table.",
+        rule: "The GTIN of a variable measure trade item not scanned at POS SHALL occur in combination with: * variable count of items; or * a trade measure; or * the dimensions of a roll product. Note: The first position of the GTIN is '9' for such trade items. Also see the note below this table.",
         condition: ['01', '02'],
         conditionN1: '9',
         OR: ['30', '3d{3}', '8001'],
       },
       {
         designation: 'GTIN of a custom trade item.',
-        rule:
-          "The GTIN of a custom trade item SHALL be used in combination with the Made-to-Order variation number. Note: The first position of the GTIN is '9' for such trade items.",
+        rule: "The GTIN of a custom trade item SHALL be used in combination with the Made-to-Order variation number. Note: The first position of the GTIN is '9' for such trade items.",
         condition: ['01'],
         conditionN1: '9',
         EXACTLY: ['242'],
@@ -5688,13 +5847,13 @@ class GS1DigitalLinkToolkit {
       },
       {
         designation: 'Batch/lot number',
-        rule:
-          'Batch/lot number SHALL occur in combination with: * a GTIN; or * a GTIN of contained trade items; or * the identification of an individual trade item piece.',
+        rule: 'Batch/lot number SHALL occur in combination with: * a GTIN; or * a GTIN of contained trade items; or * the identification of an individual trade item piece.',
         condition: ['10'],
         XOR: ['01', '02', '8006'],
       },
       {
-        designation: 'Production date, packaging date, best before date, sell by date, expiration date (of a trade item)',
+        designation:
+          'Production date, packaging date, best before date, sell by date, expiration date (of a trade item)',
         rule: 'These dates SHALL occur in combination with: * a GTIN; or * a GTIN of contained trade items; or * the identification of an individual trade item piece.',
         condition: ['11', '13', '15', '16', '17'],
         XOR: ['01', '02', '8006'],
@@ -5714,18 +5873,39 @@ class GS1DigitalLinkToolkit {
         EXACTLY: ['255'],
       },
 
-      { designation: '', rule: '', condition: ['20'], XOR: ['01', '02', '8006'] },
+      {
+        designation: '',
+        rule: '',
+        condition: ['20'],
+        XOR: ['01', '02', '8006'],
+      },
       { designation: '', rule: '', condition: ['21'], XOR: ['01', '8006'] },
 
       { designation: '', rule: '', condition: ['22'], EXACTLY: ['01'] },
-      { designation: '', rule: '', condition: ['240'], XOR: ['01', '02', '8006'] },
-      { designation: '', rule: '', condition: ['241'], XOR: ['01', '02', '8006'] },
+      {
+        designation: '',
+        rule: '',
+        condition: ['240'],
+        XOR: ['01', '02', '8006'],
+      },
+      {
+        designation: '',
+        rule: '',
+        condition: ['241'],
+        XOR: ['01', '02', '8006'],
+      },
 
       // *** 242 rule has N1=9 condition on 01,02,8006
 
       { designation: '', rule: '', condition: ['243'], EXACTLY: ['01'] },
 
-      { designation: '', rule: '', condition: ['250'], AND: ['21'], XOR: ['01', '8006'] },
+      {
+        designation: '',
+        rule: '',
+        condition: ['250'],
+        AND: ['21'],
+        XOR: ['01', '8006'],
+      },
 
       { designation: '', rule: '', condition: ['251'], XOR: ['01', '8006'] },
 
@@ -5832,7 +6012,9 @@ class GS1DigitalLinkToolkit {
       } else {
         checkDigitPosition = parseInt(checkDigitPosition);
       }
-      let actualCheckDigit = parseInt(gs1IDValue.charAt(checkDigitPosition - 1));
+      let actualCheckDigit = parseInt(
+        gs1IDValue.charAt(checkDigitPosition - 1)
+      );
 
       if (actualCheckDigit !== expectedCheckDigit) {
         rv = false;
@@ -5844,7 +6026,7 @@ class GS1DigitalLinkToolkit {
             ' ; the correct check digit should be ' +
             expectedCheckDigit +
             ' at position ' +
-            checkDigitPosition,
+            checkDigitPosition
         );
       }
     }
@@ -5966,7 +6148,12 @@ class GS1DigitalLinkToolkit {
               if (this.aiRegex[k].test(results[a])) {
                 obj[k] = results[a];
               } else {
-                throw new Error('SYNTAX ERROR: invalid syntax for value of (' + k + ') : ' + results[a]);
+                throw new Error(
+                  'SYNTAX ERROR: invalid syntax for value of (' +
+                    k +
+                    ') : ' +
+                    results[a]
+                );
               }
             }
           }
@@ -6090,7 +6277,12 @@ class GS1DigitalLinkToolkit {
     let rv = {};
 
     // Need to remove unwanted trailing slash
-    if (uriStem !== undefined && uriStem !== null && uriStem !== '' && uriStem.endsWith('/')) {
+    if (
+      uriStem !== undefined &&
+      uriStem !== null &&
+      uriStem !== '' &&
+      uriStem.endsWith('/')
+    ) {
       uriStem = uriStem.substr(0, uriStem.length - 1) + path + queryString;
     }
 
@@ -6131,7 +6323,7 @@ class GS1DigitalLinkToolkit {
           identifiers.length +
           ' ' +
           JSON.stringify(identifiers) +
-          '; please check for a syntax error',
+          '; please check for a syntax error'
       );
     } else {
       this.verifySyntax(identifiers[0], gs1AIarray[identifiers[0]]);
@@ -6141,13 +6333,25 @@ class GS1DigitalLinkToolkit {
       if (useShortText) {
         // Using short text names
         if (this.aiShortCode[identifiers[0]] !== undefined) {
-          path = '/' + this.aiShortCode[identifiers[0]] + '/' + this.percentEncode(gs1AIarray[identifiers[0]]);
+          path =
+            '/' +
+            this.aiShortCode[identifiers[0]] +
+            '/' +
+            this.percentEncode(gs1AIarray[identifiers[0]]);
         } else {
-          path = '/' + identifiers[0] + '/' + this.percentEncode(gs1AIarray[identifiers[0]]);
+          path =
+            '/' +
+            identifiers[0] +
+            '/' +
+            this.percentEncode(gs1AIarray[identifiers[0]]);
         }
       } else {
         // Using numeric AIs
-        path = '/' + identifiers[0] + '/' + this.percentEncode(gs1AIarray[identifiers[0]]);
+        path =
+          '/' +
+          identifiers[0] +
+          '/' +
+          this.percentEncode(gs1AIarray[identifiers[0]]);
       }
 
       // append any data qualifiers in the expected order, as specified in this.aiQualifiers[identifiers[0]]
@@ -6159,7 +6363,11 @@ class GS1DigitalLinkToolkit {
             if (useShortText) {
               // Using short text names
               if (this.aiShortCode[q] !== undefined) {
-                path += '/' + this.aiShortCode[q] + '/' + this.percentEncode(gs1AIarray[q]);
+                path +=
+                  '/' +
+                  this.aiShortCode[q] +
+                  '/' +
+                  this.percentEncode(gs1AIarray[q]);
               } else {
                 path += '/' + q + '/' + this.percentEncode(gs1AIarray[q]);
               }
@@ -6180,9 +6388,13 @@ class GS1DigitalLinkToolkit {
           if (useShortText) {
             // Using short text names
             if (this.aiShortCode[a] !== undefined) {
-              queryStringArray.push(this.aiShortCode[a] + '=' + this.percentEncode(gs1AIarray[a]));
+              queryStringArray.push(
+                this.aiShortCode[a] + '=' + this.percentEncode(gs1AIarray[a])
+              );
             } else {
-              queryStringArray.push(a + '=' + this.percentEncode(gs1AIarray[a]));
+              queryStringArray.push(
+                a + '=' + this.percentEncode(gs1AIarray[a])
+              );
             }
           } else {
             // Using numeric AIs
@@ -6202,7 +6414,9 @@ class GS1DigitalLinkToolkit {
       if (otherKeys.length > 0) {
         let queryStringArray = [];
         for (let iok in otherKeys) {
-          queryStringArray.push(otherKeys[iok] + '=' + gs1AIarray[otherKeys[iok]]);
+          queryStringArray.push(
+            otherKeys[iok] + '=' + gs1AIarray[otherKeys[iok]]
+          );
         }
         if (queryString == '') {
           webURI += '?' + queryStringArray.join('&');
@@ -6211,7 +6425,10 @@ class GS1DigitalLinkToolkit {
         }
       }
 
-      if (nonGS1keyvaluePairs !== {} && Object.keys(nonGS1keyvaluePairs).length > 0) {
+      if (
+        nonGS1keyvaluePairs !== {} &&
+        Object.keys(nonGS1keyvaluePairs).length > 0
+      ) {
         let queryStringArray = [];
         let keys = Object.keys(nonGS1keyvaluePairs);
         for (let iok in keys) {
@@ -6274,7 +6491,7 @@ class GS1DigitalLinkToolkit {
           map.identifiers.length +
           ' ' +
           JSON.stringify(map.identifiers) +
-          '; please check for a syntax error',
+          '; please check for a syntax error'
       );
     } else {
       this.verifySyntax(map.identifiers[0], gs1AIarray[map.identifiers[0]]);
@@ -6287,8 +6504,15 @@ class GS1DigitalLinkToolkit {
     let rv = this.analyseURI(gs1DigitalLinkURI, true);
     let uncompressedDL = gs1DigitalLinkURI;
 
-    if (rv.detected == 'fully compressed GS1 Digital Link' || rv.detected == 'partially compressed GS1 Digital Link') {
-      uncompressedDL = this.decompressGS1DigitalLink(gs1DigitalLinkURI, false, rv.uriStem);
+    if (
+      rv.detected == 'fully compressed GS1 Digital Link' ||
+      rv.detected == 'partially compressed GS1 Digital Link'
+    ) {
+      uncompressedDL = this.decompressGS1DigitalLink(
+        gs1DigitalLinkURI,
+        false,
+        rv.uriStem
+      );
     }
 
     let excludeQueryString = uncompressedDL;
@@ -6526,9 +6750,13 @@ class GS1DigitalLinkToolkit {
     return rv.semantics;
 
     function tenDigitToXsdDateTime(tenDigit) {
-      var re = new RegExp('\\d{2}(?:12|11|0\\d)(?:31|30|2\\d|1\\d|0[1-9])(?:0\\d|1\\d|2[0-4])(?:[0-5]\\d)');
+      var re = new RegExp(
+        '\\d{2}(?:12|11|0\\d)(?:31|30|2\\d|1\\d|0[1-9])(?:0\\d|1\\d|2[0-4])(?:[0-5]\\d)'
+      );
       if (!re.test(tenDigit)) {
-        throw new Error('input to date conversion did not match valid YYMMDDhhmm pattern');
+        throw new Error(
+          'input to date conversion did not match valid YYMMDDhhmm pattern'
+        );
       } else {
         var year = tenDigit.substr(0, 2);
         var month = tenDigit.substr(2, 2);
@@ -6537,15 +6765,29 @@ class GS1DigitalLinkToolkit {
         var mins = tenDigit.substr(8, 2);
         var intendedYear = determineFourDigitYear(year);
 
-        var intendedDateTime = intendedYear + '-' + month + '-' + day + 'T' + hour + ':' + mins + ':00';
+        var intendedDateTime =
+          intendedYear +
+          '-' +
+          month +
+          '-' +
+          day +
+          'T' +
+          hour +
+          ':' +
+          mins +
+          ':00';
         return intendedDateTime;
       }
     }
 
     function maxTwelveDigitToXsdDateTime(twelveDigit) {
-      var re = new RegExp('\\d{2}(?:12|11|0\\d)(?:31|30|2\\d|1\\d|0[1-9])(?:0\\d|1\\d|2[0-4])(?:[0-5]\\d)?(?:[0-5]\\d)?');
+      var re = new RegExp(
+        '\\d{2}(?:12|11|0\\d)(?:31|30|2\\d|1\\d|0[1-9])(?:0\\d|1\\d|2[0-4])(?:[0-5]\\d)?(?:[0-5]\\d)?'
+      );
       if (!re.test(twelveDigit)) {
-        throw new Error('input to date conversion did not match valid YYMMDDhh[mm][ss] pattern');
+        throw new Error(
+          'input to date conversion did not match valid YYMMDDhh[mm][ss] pattern'
+        );
       } else {
         var year = twelveDigit.substr(0, 2);
         var month = twelveDigit.substr(2, 2);
@@ -6567,7 +6809,18 @@ class GS1DigitalLinkToolkit {
 
         var intendedYear = determineFourDigitYear(year);
 
-        var intendedDateTime = intendedYear + '-' + month + '-' + day + 'T' + hour + ':' + min + ':' + sec;
+        var intendedDateTime =
+          intendedYear +
+          '-' +
+          month +
+          '-' +
+          day +
+          'T' +
+          hour +
+          ':' +
+          min +
+          ':' +
+          sec;
         return intendedDateTime;
       }
     }
@@ -6593,7 +6846,9 @@ class GS1DigitalLinkToolkit {
     function sixDigitToXsdDate(sixDigit) {
       var re = new RegExp('\\d{2}(?:12|11|0\\d)(?:31|30|2\\d|1\\d|0\\d)');
       if (!re.test(sixDigit)) {
-        throw new Error('input to date conversion did not match valid YYMMDD pattern');
+        throw new Error(
+          'input to date conversion did not match valid YYMMDD pattern'
+        );
       } else {
         var year = sixDigit.substr(0, 2);
         var month = sixDigit.substr(2, 2);
@@ -6607,13 +6862,18 @@ class GS1DigitalLinkToolkit {
         }
         if (month == '02') {
           lastDay = 28;
-          if (intendedYear % 400 == 0 || (intendedYear % 4 == 0 && !(intendedYear % 100 == 0))) {
+          if (
+            intendedYear % 400 == 0 ||
+            (intendedYear % 4 == 0 && !(intendedYear % 100 == 0))
+          ) {
             lastDay = 29;
           }
         }
 
         if (day - 0 > lastDay) {
-          throw new Error('input to date conversion was a YYMMDD pattern with a value of DD too large for MM, e.g. 31st of June, 30th of February');
+          throw new Error(
+            'input to date conversion was a YYMMDD pattern with a value of DD too large for MM, e.g. 31st of June, 30th of February'
+          );
         }
 
         var intendedDate;
@@ -6730,7 +6990,9 @@ class GS1DigitalLinkToolkit {
     let l = pathElements.length;
     let pathElementIndex = l - 2;
     while (pathElementIndex >= 0) {
-      pathCandidates[pathElements[pathElementIndex]] = this.percentDecode(pathElements[1 + pathElementIndex]);
+      pathCandidates[pathElements[pathElementIndex]] = this.percentDecode(
+        pathElements[1 + pathElementIndex]
+      );
       pathElementIndex -= 2;
     }
 
@@ -6741,7 +7003,8 @@ class GS1DigitalLinkToolkit {
         let p = pairs[i].split('=');
         if (p[0] !== null && p[1] !== null) {
           if (this.shortCodeToNumeric.hasOwnProperty(p[0])) {
-            queryStringCandidates[this.shortCodeToNumeric[p[0]]] = this.percentDecode(p[1]);
+            queryStringCandidates[this.shortCodeToNumeric[p[0]]] =
+              this.percentDecode(p[1]);
             delete queryStringCandidates[p[0]];
           } else {
             queryStringCandidates[p[0]] = this.percentDecode(p[1]);
@@ -6759,8 +7022,15 @@ class GS1DigitalLinkToolkit {
     rv.compressedPath = '';
     rv.structuredOutput = '';
 
-    if (relevantPathComponents.length > 0 && relevantPathComponents.length % 2 == 0) {
-      if (this.aiRegex[numericPrimaryIdentifier].test(decodeURIComponent(relevantPathComponents[1]))) {
+    if (
+      relevantPathComponents.length > 0 &&
+      relevantPathComponents.length % 2 == 0
+    ) {
+      if (
+        this.aiRegex[numericPrimaryIdentifier].test(
+          decodeURIComponent(relevantPathComponents[1])
+        )
+      ) {
         rv.detected = 'uncompressed GS1 Digital Link';
 
         rv.uncompressedPath = '/' + relevantPathComponents.join('/');
@@ -6769,26 +7039,48 @@ class GS1DigitalLinkToolkit {
           let extracted = this.extractFromGS1digitalLink(gs1DigitalLinkURI);
           let gs1AIarray = extracted.GS1;
           let otherArray = extracted.other;
-          let structuredArray = this.buildStructuredArray(gs1AIarray, otherArray);
+          let structuredArray = this.buildStructuredArray(
+            gs1AIarray,
+            otherArray
+          );
           rv.structuredOutput = structuredArray;
-          rv.elementStringsOutput = this.gs1digitalLinkToGS1elementStrings(gs1DigitalLinkURI, true);
+          rv.elementStringsOutput = this.gs1digitalLinkToGS1elementStrings(
+            gs1DigitalLinkURI,
+            true
+          );
         }
       }
     }
 
-    if (relevantPathComponents.length == 3 && this.regexSafe64.test(relevantPathComponents[2])) {
-      if (this.aiRegex[numericPrimaryIdentifier].test(decodeURIComponent(relevantPathComponents[1]))) {
+    if (
+      relevantPathComponents.length == 3 &&
+      this.regexSafe64.test(relevantPathComponents[2])
+    ) {
+      if (
+        this.aiRegex[numericPrimaryIdentifier].test(
+          decodeURIComponent(relevantPathComponents[1])
+        )
+      ) {
         rv.detected = 'partially compressed GS1 Digital Link';
-        rv.uncompressedPath = '/' + relevantPathComponents.slice(0, 2).join('/');
+        rv.uncompressedPath =
+          '/' + relevantPathComponents.slice(0, 2).join('/');
         rv.compressedPath = relevantPathComponents[2];
 
         if (extended) {
-          let extracted = this.extractFromCompressedGS1digitalLink(gs1DigitalLinkURI);
+          let extracted =
+            this.extractFromCompressedGS1digitalLink(gs1DigitalLinkURI);
           let gs1AIarray = extracted.GS1;
           let otherArray = extracted.other;
-          let structuredArray = this.buildStructuredArray(gs1AIarray, otherArray);
+          let structuredArray = this.buildStructuredArray(
+            gs1AIarray,
+            otherArray
+          );
           rv.structuredOutput = structuredArray;
-          rv.elementStringsOutput = this.gs1compressedDigitalLinkToGS1elementStrings(gs1DigitalLinkURI, true);
+          rv.elementStringsOutput =
+            this.gs1compressedDigitalLinkToGS1elementStrings(
+              gs1DigitalLinkURI,
+              true
+            );
         }
       }
     }
@@ -6799,12 +7091,17 @@ class GS1DigitalLinkToolkit {
       rv.compressedPath = pcr[0];
 
       if (extended) {
-        let extracted = this.extractFromCompressedGS1digitalLink(gs1DigitalLinkURI);
+        let extracted =
+          this.extractFromCompressedGS1digitalLink(gs1DigitalLinkURI);
         let gs1AIarray = extracted.GS1;
         let otherArray = extracted.other;
         let structuredArray = this.buildStructuredArray(gs1AIarray, otherArray);
         rv.structuredOutput = structuredArray;
-        rv.elementStringsOutput = this.gs1compressedDigitalLinkToGS1elementStrings(gs1DigitalLinkURI, true);
+        rv.elementStringsOutput =
+          this.gs1compressedDigitalLinkToGS1elementStrings(
+            gs1DigitalLinkURI,
+            true
+          );
       }
     }
 
@@ -6847,7 +7144,9 @@ class GS1DigitalLinkToolkit {
       for (let j = 1; j < aiSeq.length; j++) {
         let i = this.pathSequenceConstraints[aiSeq[0]].indexOf(aiSeq[j]);
         if (i <= lastIndex) {
-          throw new Error('Invalid GS1 Digital Link - invalid sequence of key qualifiers found in URI path information.');
+          throw new Error(
+            'Invalid GS1 Digital Link - invalid sequence of key qualifiers found in URI path information.'
+          );
         }
         lastIndex = i;
       }
@@ -6947,7 +7246,12 @@ class GS1DigitalLinkToolkit {
       for (let i = 0; i < pairs.length; i++) {
         let p = pairs[i].split('=');
         // if the key is not numeric AND is not a shortcode such as exp or expdt, then add to the nonGS1keyvalueePairs
-        if (p[0] !== null && p[1] !== null && !this.regexAllNum.test(p[0]) && !this.shortCodeToNumeric.hasOwnProperty(p[0])) {
+        if (
+          p[0] !== null &&
+          p[1] !== null &&
+          !this.regexAllNum.test(p[0]) &&
+          !this.shortCodeToNumeric.hasOwnProperty(p[0])
+        ) {
           nonGS1queryStringCandidates[p[0]] = this.percentDecode(p[1]);
         }
       }
@@ -6973,8 +7277,13 @@ class GS1DigitalLinkToolkit {
       let index2 = uriPathInfo.lastIndexOf('/');
       let gs1primaryKey = uriPathInfo.substr(0, index1);
       let base64segment = uriPathInfo.substr(1 + index2);
-      let gs1primaryKeyValue = uriPathInfo.substr(1 + index1, index2 - index1 - 1);
-      objGS1 = this.decompressBinaryToGS1AIarray(this.base642bin(base64segment));
+      let gs1primaryKeyValue = uriPathInfo.substr(
+        1 + index1,
+        index2 - index1 - 1
+      );
+      objGS1 = this.decompressBinaryToGS1AIarray(
+        this.base642bin(base64segment)
+      );
       if (this.regexAllNum.test(gs1primaryKey)) {
         objGS1[gs1primaryKey] = gs1primaryKeyValue;
       } else {
@@ -6997,7 +7306,10 @@ class GS1DigitalLinkToolkit {
       // TODO correct decompressBinaryToGS1AIarray so that expdt and 7003 do not both appear in the returned arrayc
 
       // if the key is not all-numeric and is not exp or expdt, then move it into objOther and delete from objGS1
-      if (!this.regexAllNum.test(k) && !this.shortCodeToNumeric.hasOwnProperty(k)) {
+      if (
+        !this.regexAllNum.test(k) &&
+        !this.shortCodeToNumeric.hasOwnProperty(k)
+      ) {
         nonGS1queryStringCandidates[k] = objGS1[k];
         delete objGS1[k];
       }
@@ -7049,13 +7361,18 @@ class GS1DigitalLinkToolkit {
             identifiers.length +
             ' ' +
             JSON.stringify(identifiers) +
-            '; please check for a syntax error',
+            '; please check for a syntax error'
         );
       } else {
         this.verifySyntax(identifiers[0], gs1AIarray[identifiers[0]]);
         this.verifyCheckDigit(identifiers[0], gs1AIarray[identifiers[0]]);
 
-        elementStrings = elementStringsPush(elementStrings, '(' + identifiers[0] + ')', gs1AIarray[identifiers[0]], '');
+        elementStrings = elementStringsPush(
+          elementStrings,
+          '(' + identifiers[0] + ')',
+          gs1AIarray[identifiers[0]],
+          ''
+        );
 
         // append any valid found qualifiers for that primary identifier to the elementStrings array
 
@@ -7064,7 +7381,12 @@ class GS1DigitalLinkToolkit {
 
           for (let qindex in qualifiersForPrimary) {
             if (qualifiers.indexOf(qualifiersForPrimary[qindex]) > -1) {
-              elementStrings = elementStringsPush(elementStrings, '(' + qualifiersForPrimary[qindex] + ')', gs1AIarray[qualifiersForPrimary[qindex]], '');
+              elementStrings = elementStringsPush(
+                elementStrings,
+                '(' + qualifiersForPrimary[qindex] + ')',
+                gs1AIarray[qualifiersForPrimary[qindex]],
+                ''
+              );
             }
           }
         }
@@ -7072,7 +7394,12 @@ class GS1DigitalLinkToolkit {
         // append any found attributes to the elementStrings array
         let sortedAttributes = attributes.sort();
         for (let a in sortedAttributes) {
-          elementStrings = elementStringsPush(elementStrings, '(' + attributes[a] + ')', gs1AIarray[attributes[a]], '');
+          elementStrings = elementStringsPush(
+            elementStrings,
+            '(' + attributes[a] + ')',
+            gs1AIarray[attributes[a]],
+            ''
+          );
         }
       }
     } else {
@@ -7089,11 +7416,21 @@ class GS1DigitalLinkToolkit {
       }
 
       for (let i in fixedLengthPrimaryIdentifier) {
-        elementStrings = elementStringsPush(elementStrings, fixedLengthPrimaryIdentifier[i], gs1AIarray[fixedLengthPrimaryIdentifier[i]], '');
+        elementStrings = elementStringsPush(
+          elementStrings,
+          fixedLengthPrimaryIdentifier[i],
+          gs1AIarray[fixedLengthPrimaryIdentifier[i]],
+          ''
+        );
       }
 
       for (let i in fixedLengthValuesOther) {
-        elementStrings = elementStringsPush(elementStrings, fixedLengthValuesOther[i], gs1AIarray[fixedLengthValuesOther[i]], '');
+        elementStrings = elementStringsPush(
+          elementStrings,
+          fixedLengthValuesOther[i],
+          gs1AIarray[fixedLengthValuesOther[i]],
+          ''
+        );
       }
 
       for (let i in variableLengthValues) {
@@ -7101,7 +7438,12 @@ class GS1DigitalLinkToolkit {
         if (i < variableLengthValues.length - 1) {
           gs = this.groupSeparator;
         }
-        elementStrings = elementStringsPush(elementStrings, variableLengthValues[i], gs1AIarray[variableLengthValues[i]], gs);
+        elementStrings = elementStringsPush(
+          elementStrings,
+          variableLengthValues[i],
+          gs1AIarray[variableLengthValues[i]],
+          gs
+        );
       }
     }
 
@@ -7128,17 +7470,28 @@ class GS1DigitalLinkToolkit {
 
   // translate a string of concatenated GS1 element strings into a GS1 Digital Link URI
   gs1ElementStringsToGS1DigitalLink(elementString, useShortText, uriStem) {
-    return this.buildGS1digitalLink(this.extractFromGS1elementStrings(elementString), useShortText, uriStem, {});
+    return this.buildGS1digitalLink(
+      this.extractFromGS1elementStrings(elementString),
+      useShortText,
+      uriStem,
+      {}
+    );
   }
 
   // translate a GS1 Digital Link URI into a string of concatenated GS1 element strings
   gs1digitalLinkToGS1elementStrings(digitalLinkURI, brackets) {
-    return this.buildGS1elementStrings(this.extractFromGS1digitalLink(digitalLinkURI).GS1, brackets);
+    return this.buildGS1elementStrings(
+      this.extractFromGS1digitalLink(digitalLinkURI).GS1,
+      brackets
+    );
   }
 
   // translate a GS1 Digital Link URI into a string of concatenated GS1 element strings
   gs1compressedDigitalLinkToGS1elementStrings(digitalLinkURI, brackets) {
-    return this.buildGS1elementStrings(this.extractFromCompressedGS1digitalLink(digitalLinkURI).GS1, brackets);
+    return this.buildGS1elementStrings(
+      this.extractFromCompressedGS1digitalLink(digitalLinkURI).GS1,
+      brackets
+    );
   }
 
   handleEncodings(enc, lengthBits, charstr, binstr) {
@@ -7154,15 +7507,24 @@ class GS1DigitalLinkToolkit {
         break;
 
       case 1:
-        binstr += '001' + lengthBits + this.buildBinaryValue(charstr.toUpperCase(), 4, this.hexAlphabet);
+        binstr +=
+          '001' +
+          lengthBits +
+          this.buildBinaryValue(charstr.toUpperCase(), 4, this.hexAlphabet);
         break;
 
       case 2:
-        binstr += '010' + lengthBits + this.buildBinaryValue(charstr.toUpperCase(), 4, this.hexAlphabet);
+        binstr +=
+          '010' +
+          lengthBits +
+          this.buildBinaryValue(charstr.toUpperCase(), 4, this.hexAlphabet);
         break;
 
       case 3:
-        binstr += '011' + lengthBits + this.buildBinaryValue(charstr, 6, this.safeBase64Alphabet);
+        binstr +=
+          '011' +
+          lengthBits +
+          this.buildBinaryValue(charstr, 6, this.safeBase64Alphabet);
         break;
 
       case 4:
@@ -7304,7 +7666,12 @@ class GS1DigitalLinkToolkit {
             cursor += 4;
             let d3 = parseInt(h3, 16);
             if (d3 > 9) {
-              throw new Error('GS1 Application Identifier keys should be all-numeric; ' + h1h2 + h3 + ' is not all-numeric');
+              throw new Error(
+                'GS1 Application Identifier keys should be all-numeric; ' +
+                  h1h2 +
+                  h3 +
+                  ' is not all-numeric'
+              );
             }
             ai = h1h2 + h3;
           }
@@ -7314,7 +7681,13 @@ class GS1DigitalLinkToolkit {
             ai = h1h2 + h3 + h4;
             let d4 = parseInt(h4, 16);
             if (d4 > 9) {
-              throw new Error('GS1 Application Identifier keys should be all-numeric; ' + h1h2 + h3 + h4 + ' is not all-numeric');
+              throw new Error(
+                'GS1 Application Identifier keys should be all-numeric; ' +
+                  h1h2 +
+                  h3 +
+                  h4 +
+                  ' is not all-numeric'
+              );
             }
           }
 
@@ -7322,7 +7695,10 @@ class GS1DigitalLinkToolkit {
           gs1AIarray = tmp.gs1AIarray;
           cursor = tmp.cursor;
         } else {
-          throw new Error('Fail: Unsupported AI (reserved range) - no entry in tableP; h1h2=' + h1h2);
+          throw new Error(
+            'Fail: Unsupported AI (reserved range) - no entry in tableP; h1h2=' +
+              h1h2
+          );
         }
       } else {
         // h1h2 is outside 00-99, using some hex characters
@@ -7359,7 +7735,14 @@ class GS1DigitalLinkToolkit {
             let enc = parseInt(encBits, 2);
             let numChars = parseInt(binstr.substr(cursor, 7), 2);
             cursor += 7;
-            let rv = this.handleDecodings(enc, binstr, cursor, gs1AIarray, key, numChars);
+            let rv = this.handleDecodings(
+              enc,
+              binstr,
+              cursor,
+              gs1AIarray,
+              key,
+              numChars
+            );
 
             gs1AIarray = rv.gs1AIarray;
             cursor = rv.cursor;
@@ -7415,7 +7798,14 @@ class GS1DigitalLinkToolkit {
           cursor += 3;
           let enc = parseInt(encBits, 2);
           let numChars = tx.L;
-          let rvd = this.handleDecodings(enc, binstr, cursor, gs1AIarray, key, numChars);
+          let rvd = this.handleDecodings(
+            enc,
+            binstr,
+            cursor,
+            gs1AIarray,
+            key,
+            numChars
+          );
           gs1AIarray = rvd.gs1AIarray;
           cursor = rvd.cursor;
         }
@@ -7429,7 +7819,14 @@ class GS1DigitalLinkToolkit {
           cursor += v3;
           let numChars = parseInt(lengthBits, 2);
           let enc = parseInt(encBits, 2);
-          let rvd = this.handleDecodings(enc, binstr, cursor, gs1AIarray, key, numChars);
+          let rvd = this.handleDecodings(
+            enc,
+            binstr,
+            cursor,
+            gs1AIarray,
+            key,
+            numChars
+          );
           gs1AIarray = rvd.gs1AIarray;
           cursor = rvd.cursor;
         }
@@ -7440,7 +7837,11 @@ class GS1DigitalLinkToolkit {
     return rv;
   }
 
-  compressGS1AIarrayToBinary(gs1AIarray, useOptimisations, nonGS1keyvaluePairs) {
+  compressGS1AIarrayToBinary(
+    gs1AIarray,
+    useOptimisations,
+    nonGS1keyvaluePairs
+  ) {
     let binstr = '';
     let cursor;
     let value;
@@ -7454,20 +7855,31 @@ class GS1DigitalLinkToolkit {
       let candidatesFromTableOpt;
 
       do {
-        candidatesFromTableOpt = findCandidatesFromTableOpt(akeysa, this.tableOpt);
+        candidatesFromTableOpt = findCandidatesFromTableOpt(
+          akeysa,
+          this.tableOpt
+        );
 
         // pick candidatesFromTableOpt that can save the highest number of AI key characters
 
-        let bestCandidate = findBestOptimisationCandidate(candidatesFromTableOpt);
+        let bestCandidate = findBestOptimisationCandidate(
+          candidatesFromTableOpt
+        );
 
         let v = this.tableOpt[bestCandidate];
 
         if (bestCandidate !== '') {
-          akeysa = removeOptimisedKeysFromAIlist(akeysa, this.tableOpt[bestCandidate]);
+          akeysa = removeOptimisedKeysFromAIlist(
+            akeysa,
+            this.tableOpt[bestCandidate]
+          );
           optimisations.push(bestCandidate);
         }
 
-        candidatesFromTableOpt = findCandidatesFromTableOpt(akeysa, this.tableOpt);
+        candidatesFromTableOpt = findCandidatesFromTableOpt(
+          akeysa,
+          this.tableOpt
+        );
       } while (Object.keys(candidatesFromTableOpt).length > 0);
     }
 
@@ -7579,7 +7991,10 @@ class GS1DigitalLinkToolkit {
           // handle fixed-length numeric component
           let charstr = value.substr(cursor, tx.L);
           cursor += parseInt(tx.L);
-          let binValue = this.padToLength(BigInt(charstr).toString(2), this.numberOfValueBits(tx.L));
+          let binValue = this.padToLength(
+            BigInt(charstr).toString(2),
+            this.numberOfValueBits(tx.L)
+          );
           binstr += binValue;
         }
 
@@ -7587,8 +8002,14 @@ class GS1DigitalLinkToolkit {
           // handle variable-length numeric component
           let charstr = value.substr(cursor);
           cursor += charstr.length;
-          let lengthBits = this.padToLength(charstr.length.toString(2), this.numberOfLengthBits(tx.M));
-          let binValue = this.padToLength(BigInt(charstr).toString(2), this.numberOfValueBits(charstr.length));
+          let lengthBits = this.padToLength(
+            charstr.length.toString(2),
+            this.numberOfLengthBits(tx.M)
+          );
+          let binValue = this.padToLength(
+            BigInt(charstr).toString(2),
+            this.numberOfValueBits(charstr.length)
+          );
           binstr += lengthBits + binValue;
         }
 
@@ -7605,7 +8026,10 @@ class GS1DigitalLinkToolkit {
           // handle variable-length alphanumeric component
           let charstr = value.substr(cursor);
           cursor += charstr.length;
-          let lengthBits = this.padToLength(charstr.length.toString(2), this.numberOfLengthBits(tx.M));
+          let lengthBits = this.padToLength(
+            charstr.length.toString(2),
+            this.numberOfLengthBits(tx.M)
+          );
           let enc = this.determineEncoding(charstr);
           binstr = this.handleEncodings(enc, lengthBits, charstr, binstr);
         }
@@ -7639,7 +8063,14 @@ class GS1DigitalLinkToolkit {
     return binstr;
   }
 
-  buildCompressedGS1digitalLink(gs1AIarray, useShortText, uriStem, useOptimisations, compressOtherKeyValuePairs, nonGS1keyvaluePairs) {
+  buildCompressedGS1digitalLink(
+    gs1AIarray,
+    useShortText,
+    uriStem,
+    useOptimisations,
+    compressOtherKeyValuePairs,
+    nonGS1keyvaluePairs
+  ) {
     let identifiers = [];
     let qualifiers = [];
     let attributes = [];
@@ -7666,11 +8097,24 @@ class GS1DigitalLinkToolkit {
     }
 
     // Need to remove unwanted trailing slash
-    if (uriStem !== undefined && uriStem !== null && uriStem !== '' && uriStem.endsWith('/')) {
+    if (
+      uriStem !== undefined &&
+      uriStem !== null &&
+      uriStem !== '' &&
+      uriStem.endsWith('/')
+    ) {
       uriStem = uriStem.substr(0, uriStem.length);
     }
 
-    path = '/' + this.bin2base64(this.compressGS1AIarrayToBinary(gs1AIarray, useOptimisations, compressOtherKeyValuePairs ? nonGS1keyvaluePairs : {}));
+    path =
+      '/' +
+      this.bin2base64(
+        this.compressGS1AIarrayToBinary(
+          gs1AIarray,
+          useOptimisations,
+          compressOtherKeyValuePairs ? nonGS1keyvaluePairs : {}
+        )
+      );
 
     if (uriStem == null || uriStem == '') {
       // prepare a canonical Web URI
@@ -7683,22 +8127,38 @@ class GS1DigitalLinkToolkit {
   }
 
   decompressGS1DigitalLink(compressedDigitalLinkURI, useShortText, uriStem) {
-    let extracted = this.extractFromCompressedGS1digitalLink(compressedDigitalLinkURI);
+    let extracted = this.extractFromCompressedGS1digitalLink(
+      compressedDigitalLinkURI
+    );
     let gs1AIarray = extracted.GS1;
     let otherArray = extracted.other;
-    let uncompressedDL = this.buildGS1digitalLink(gs1AIarray, useShortText, uriStem, otherArray);
+    let uncompressedDL = this.buildGS1digitalLink(
+      gs1AIarray,
+      useShortText,
+      uriStem,
+      otherArray
+    );
     return uncompressedDL;
   }
 
   decompressGS1DigitalLinkToStructuredArray(compressedDigitalLinkURI) {
-    let extracted = this.extractFromCompressedGS1digitalLink(compressedDigitalLinkURI);
+    let extracted = this.extractFromCompressedGS1digitalLink(
+      compressedDigitalLinkURI
+    );
     let gs1AIarray = extracted.GS1;
     let otherArray = extracted.other;
     let structuredArray = this.buildStructuredArray(gs1AIarray, otherArray);
     return structuredArray;
   }
 
-  compressGS1DigitalLink(digitalLinkURI, useShortText, uriStem, uncompressedPrimary, useOptimisations, compressOtherKeyValuePairs) {
+  compressGS1DigitalLink(
+    digitalLinkURI,
+    useShortText,
+    uriStem,
+    uncompressedPrimary,
+    useOptimisations,
+    compressOtherKeyValuePairs
+  ) {
     // extract query string
     let firstQuestionMark = digitalLinkURI.indexOf('?');
     let queryString = '';
@@ -7719,26 +8179,55 @@ class GS1DigitalLinkToolkit {
       for (let i = 0; i < pairs.length; i++) {
         let p = pairs[i].split('=');
         // if the key is not numeric AND is not a shortcode such as exp or expdt, then add to the nonGS1keyvalueePairs
-        if (p[0] !== null && p[1] !== null && !this.regexAllNum.test(p[0]) && !this.shortCodeToNumeric.hasOwnProperty(p[0])) {
+        if (
+          p[0] !== null &&
+          p[1] !== null &&
+          !this.regexAllNum.test(p[0]) &&
+          !this.shortCodeToNumeric.hasOwnProperty(p[0])
+        ) {
           nonGS1keyvaluePairs[p[0]] = this.percentDecode(p[1]);
         }
       }
     }
 
     let gs1AIarray = this.extractFromGS1digitalLink(digitalLinkURI).GS1;
-    let compressedDL = this.buildCompressedGS1digitalLink(gs1AIarray, useShortText, uriStem, useOptimisations, compressOtherKeyValuePairs, nonGS1keyvaluePairs);
+    let compressedDL = this.buildCompressedGS1digitalLink(
+      gs1AIarray,
+      useShortText,
+      uriStem,
+      useOptimisations,
+      compressOtherKeyValuePairs,
+      nonGS1keyvaluePairs
+    );
     return compressedDL;
   }
 
-  gs1ElementStringsToCompressedGS1DigitalLink(elementString, useShortText, uriStem, uncompressedPrimary, useOptimisations) {
+  gs1ElementStringsToCompressedGS1DigitalLink(
+    elementString,
+    useShortText,
+    uriStem,
+    uncompressedPrimary,
+    useOptimisations
+  ) {
     let gs1AIarray = this.extractFromGS1elementStrings(elementString);
     let separated = this.separateIDnonID(gs1AIarray);
     if (uncompressedPrimary) {
       return (
-        this.buildGS1digitalLink(separated.ID, useShortText, uriStem, {}) + '/' + this.bin2base64(this.compressGS1AIarrayToBinary(separated.nonID, useOptimisations, {}))
+        this.buildGS1digitalLink(separated.ID, useShortText, uriStem, {}) +
+        '/' +
+        this.bin2base64(
+          this.compressGS1AIarrayToBinary(separated.nonID, useOptimisations, {})
+        )
       );
     } else {
-      return this.buildCompressedGS1digitalLink(this.extractFromGS1elementStrings(elementString), useShortText, uriStem, useOptimisations, false, {});
+      return this.buildCompressedGS1digitalLink(
+        this.extractFromGS1elementStrings(elementString),
+        useShortText,
+        uriStem,
+        useOptimisations,
+        false,
+        {}
+      );
     }
   }
 

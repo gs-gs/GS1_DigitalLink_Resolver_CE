@@ -44,6 +44,7 @@ class GS1DigitalLinkToolkit {
         format: 'X..16',
         type: 'I',
         fixedLength: true,
+        qualifiers: ['21'],
         regex: '^[A-Za-z0-9]{16}$',
       },
       {
@@ -5264,6 +5265,7 @@ class GS1DigitalLinkToolkit {
     // note that currently only GTIN (01) and ITIP (8006)  have more than one permitted key qualifier
     const pathSequenceConstraints = {
       '01': ['22', '10', '3101', '13', '21'],
+      '03': ['21'],
       8006: ['22', '10', '21'],
     };
 

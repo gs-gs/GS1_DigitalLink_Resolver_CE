@@ -1,0 +1,26 @@
+[
+  {
+    "stack": "gosource/gs1-digital-link/dev-farm",
+    "runOn": "deploy-dev"
+  },
+  {
+    "stack": "gosource/gs1-digital-link/dev-feedlot",
+    "runOn": "deploy-dev"
+  },
+  {
+    "stack": "gosource/gs1-digital-link/dev-processor",
+    "runOn": "deploy-dev"
+  },
+  {
+    "stack": "gosource/gs1-digital-link/farm",
+    "runOn": "deploy"
+  },
+  {
+    "stack": "gosource/gs1-digital-link/feedlot",
+    "runOn": "deploy"
+  },
+  {
+    "stack": "gosource/gs1-digital-link/processor",
+    "runOn": "deploy"
+  }
+]

@@ -1,0 +1,76 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - deploy
+      - deploy-dev
+env: 
+  environment: ${{ github.ref == 'refs/heads/deploy' && 'prod' || 'dev' }}
+  
+jobs:
+  matrix_prep:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+    - name: Check out code into the Go module directory
+      uses: actions/checkout@v3
+    - id: set-matrix
+      run: |
+        branchName=$(echo '${{ github.ref }}' | sed 's,refs/heads/,,g')  
+        matrix=$(jq --arg branchName "$branchName" 'map( 
+            . | select((.runOn==$branchName) or (.runOn=="always"))
+        )' matrix_includes.json)                
+        echo "matrix={\"include\":$(echo $matrix)}" >> $GITHUB_OUTPUT
+  deploy:
+    needs: matrix_prep
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+
+    strategy:
+      matrix: ${{fromJson(needs.matrix_prep.outputs.matrix)}}
+    
+    environment:
+      name: ${{ github.ref == 'refs/heads/deploy' && 'prod' || 'dev' }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node Version
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.17.0'
+
+      - name: Installing dependencies for infrastructure
+        run: cd infrastructure && npm ci
+
+      - name: Set .env file content
+        run: |
+          touch infrastructure/.env
+          echo SQL_SERVER_PORT=${{ secrets.SQL_SERVER_PORT }} >> infrastructure/.env
+          echo SQL_SERVER_USERNAME=${{ secrets.SQL_SERVER_USERNAME }} >> infrastructure/.env
+          echo SQL_SERVER_PASSWORD=${{ secrets.SQL_SERVER_PASSWORD }} >> infrastructure/.env
+          echo DB_INSTANCE_IDENTIFIER=${{ secrets.DB_INSTANCE_IDENTIFIER }} >> infrastructure/.env
+          echo MONGO_PORT=${{ secrets.MONGO_PORT }} >> infrastructure/.env
+          echo MONGO_USERNAME=${{ secrets.MONGO_USERNAME }} >> infrastructure/.env
+          echo MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }} >> infrastructure/.env
+          echo HOSTED_ZONE_ID=${{ secrets.HOSTED_ZONE_ID }} >> infrastructure/.env
+          cat infrastructure/.env
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_GITHUB_ACTION_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - uses: pulumi/actions@v3
+        with:
+          work-dir: ./infrastructure
+          command: up
+          refresh: true
+          stack-name: ${{ matrix.stack }}
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}

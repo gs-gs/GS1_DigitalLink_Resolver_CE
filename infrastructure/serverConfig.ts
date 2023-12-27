@@ -80,9 +80,9 @@ const createServerService = (sqlAddress: string) => {
   const cpu = config.getNumber('cpu') || 256;
   const memory = config.getNumber('memory') || 512;
   const DLR_RECORD = config.get('dlr-domain');
-  const SQL_SERVER_DB = config.getSecret('SQL_SERVER_DATABASE');
-  const SQL_SERVER_USERNAME = config.getSecret('SQL_SERVER_USERNAME');
-  const SQL_SERVER_PASSWORD = config.getSecret('SQL_SERVER_PASSWORD');
+  const SQL_SERVER_DB = config.get('SQL_SERVER_DATABASE');
+  const SQL_SERVER_USERNAME = process.env.SQL_SERVER_USERNAME!;
+  const SQL_SERVER_PASSWORD = process.env.SQL_SERVER_PASSWORD!;
   if (!DLR_RECORD) {
     throw new Error('DLR_RECORD must be set');
   }

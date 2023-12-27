@@ -1,11 +1,6 @@
 config:
   aws:region: ap-southeast-2
-  gs1-digital-link:SQL_SERVER_DATABASE:
-    secure: AAABAO1QY+/n42zVO/UBY4OXifeK+OVys8bVXC1n1dayDOXnTvmpcZjgKZUMHLhC
-  gs1-digital-link:SQL_SERVER_PASSWORD:
-    secure: AAABAKkM43ePqzY3SLulzZeROeqAbVgb++5MpgO1ww+K1Fi6lhxaUA==
-  gs1-digital-link:SQL_SERVER_USERNAME:
-    secure: AAABAMvHBXxwQogBGbMBqSfzyXjdEDfjzNv5a+/lMNtVpg==
+  gs1-digital-link:SQL_SERVER_DATABASE: "processor-dlr-db"
   gs1-digital-link:containerPort: "80"
   gs1-digital-link:cpu: "256"
   gs1-digital-link:dlr-domain: "processor.dlr.agtrace.showthething.com"

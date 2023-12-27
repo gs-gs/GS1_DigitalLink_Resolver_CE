@@ -1,7 +1,7 @@
 config:
   aws:region: ap-southeast-2
-  gs1-digital-link:SQL_SERVER_DATABASE: "feedlot-dlr-db"
+  gs1-digital-link:SQL_SERVER_DATABASE: "farm-dlr-db"
   gs1-digital-link:containerPort: "80"
   gs1-digital-link:cpu: "256"
-  gs1-digital-link:dlr-domain: "feedlot.dlr.agtrace.showthething.com"
+  gs1-digital-link:dlr-domain: "dev.farm.dlr.agtrace.showthething.com"
   gs1-digital-link:memory: "512"

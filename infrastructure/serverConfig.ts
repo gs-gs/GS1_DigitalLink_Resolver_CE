@@ -46,17 +46,40 @@ const createLoadBalancerWithDomain = (
     validationRecordFqdns: [certValidation.fqdn],
   });
 
-  new aws.lb.Listener('listener', {
+  const listener = new aws.lb.Listener('listener', {
     loadBalancerArn: loadbalancer.loadBalancer.arn,
     port: 443,
     protocol: 'HTTPS',
     certificateArn: certificate.arn,
     defaultActions: [
       {
+        fixedResponse: {
+          statusCode: '404',
+          contentType: 'text/plain',
+          messageBody: 'Not Found',
+        },
+        type: 'fixed-response',
+      },
+    ],
+  });
+
+  new aws.lb.ListenerRule('listenerRule', {
+    actions: [
+      {
         type: 'forward',
         targetGroupArn: loadbalancer.defaultTargetGroup.arn,
       },
     ],
+    conditions: [
+      {
+        httpHeader: {
+          httpHeaderName: 'Referer',
+          values: ['*.agtrace.showthething.com/'],
+        },
+      },
+    ],
+    listenerArn: listener.arn,
+    priority: 100,
   });
 
   return loadbalancer;

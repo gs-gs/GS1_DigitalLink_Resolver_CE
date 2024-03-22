@@ -9,6 +9,7 @@ const {
   getDataEntriesByPage,
 } = require('../controllers/dataEntries');
 const { checkAuthHeaderInclude } = require('../middleware/auth');
+const { checkWritingLock } = require('../middleware/lock');
 
 const router = express.Router();
 
@@ -24,13 +25,13 @@ router.use(function (req, res, next) {
 router
   .route('/')
   .get(getDataEntryDate)
-  .post(checkAuthHeaderInclude, addDataURIEntry);
+  .post(checkAuthHeaderInclude, checkWritingLock, addDataURIEntry);
 
 router.route('/all/count').get(checkAuthHeaderInclude, getAllDataEntriesCount);
 router
   .route('/:identificationKeyType/:identificationKey')
   .get(checkAuthHeaderInclude, getURIEntriesUsingIKeyAndGLN)
-  .delete(checkAuthHeaderInclude, deleteURIEntriesUsingIKey);
+  .delete(checkAuthHeaderInclude, checkWritingLock, deleteURIEntriesUsingIKey);
 
 router
   .route('/validation/batch/:batchId')

@@ -16,7 +16,16 @@ class BadRequestParameter extends ValidationError {
   }
 }
 
+class ForbiddenError extends ValidationError {
+  constructor(message) {
+    super(message);
+    this.statusCode = 403;
+    this.cause = 'ForbiddenError (Forbidden Error)';
+  }
+}
+
 module.exports = {
   ValidationError,
   BadRequestParameter,
+  ForbiddenError,
 };

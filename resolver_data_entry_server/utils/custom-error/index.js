@@ -1,6 +1,13 @@
-const { AuthenticationError, UnAuthRouteAccess } = require('./authenticationError');
+const {
+  AuthenticationError,
+  UnAuthRouteAccess,
+} = require('./authenticationError');
 
-const { ValidationError, BadRequestParameter } = require('./validationError');
+const {
+  ValidationError,
+  BadRequestParameter,
+  ForbiddenError,
+} = require('./validationError');
 const { ServerResponseError, ErrorResponse } = require('./serverResponseError');
 
 module.exports = {
@@ -8,6 +15,7 @@ module.exports = {
   UnAuthRouteAccess,
   ValidationError,
   BadRequestParameter,
+  ForbiddenError,
   ServerResponseError,
   ErrorResponse,
 };

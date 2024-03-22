@@ -42,6 +42,23 @@ CREATE TABLE [dbo].[resolver_auth](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+/****** Object:  Table [dbo].[global_locks]    Script Date: 22/03/2024 03:51:22 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[global_locks](
+	[lock_id] [bigint] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](100) NULL,
+    [locked] [bit] NOT NULL,
+	[date_inserted] [datetime] NOT NULL,
+	[date_last_updated] [datetime] NOT NULL,
+ CONSTRAINT [PK_global_locks] PRIMARY KEY CLUSTERED 
+(
+	[lock_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
 /****** Object:  Table [dbo].[server_sync_register]    Script Date: 12/08/2020 13:39:17 ******/
 SET ANSI_NULLS ON
 GO
@@ -174,6 +191,12 @@ GO
 INSERT [dbo].[resolver_auth] ([auth_id], [member_primary_gln], [account_name], [authentication_key]) VALUES (1, N'9506000038186', N'Test Account', N'5555555555555')
 GO
 SET IDENTITY_INSERT [dbo].[resolver_auth] OFF
+GO
+SET IDENTITY_INSERT [dbo].[global_locks] ON 
+GO
+INSERT [dbo].[global_locks] ([lock_id], [name], [locked], [date_inserted], [date_last_updated]) VALUES (1, N'write', 1, CAST(N'2024-03-22T11:07:34.033' AS DateTime), CAST(N'2024-03-22T11:07:34.033' AS DateTime))
+GO
+SET IDENTITY_INSERT [dbo].[global_locks] OFF
 GO
 SET IDENTITY_INSERT [dbo].[uri_entries] ON 
 GO

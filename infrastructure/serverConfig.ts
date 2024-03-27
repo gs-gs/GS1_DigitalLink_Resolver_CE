@@ -270,5 +270,5 @@ const createServerService = (sqlAddress: string) => {
   });
 };
 sqlInstanceAddress.then((sqlInstanceAddress) => {
-  createServerService(sqlInstanceAddress);
+  createServerService(sqlInstanceAddress!);
 });

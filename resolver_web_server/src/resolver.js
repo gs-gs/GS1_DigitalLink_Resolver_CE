@@ -241,7 +241,7 @@ const processLinkTypeAll = async (httpRequest, incomingRequestDigitalLinkStructu
 const getAttributeFromHTTPHeaders = (httpRequest) => {
   const attributes = {
     linkType: '',
-    languageContexts: [],
+    languageContexts: [{ ianaLanguage: 'en', context: 'US' }],
     mimeTypes: [],
   };
 

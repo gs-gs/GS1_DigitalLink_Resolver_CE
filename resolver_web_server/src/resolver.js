@@ -199,6 +199,10 @@ const processLinkTypeAll = async (httpRequest, incomingRequestDigitalLinkStructu
     do {
       finishFlag = incomingRequestDigitalLinkStructure.qualifiers.length === 0;
       const responseDoc = docFuncs.getQualifierPathDoc(resolverFullDocument, incomingRequestDigitalLinkStructure.qualifiers);
+      if (!responseDoc.doc) {
+        // There is no suitable qualifierPath being found.
+        break;
+      }
 
       if (!responseDoc.exact) {
         await responseFuncs.response_303_See_Other(httpResponse, httpRequest.url, responseDoc.doc, processStartTime);

@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 
 const app = express();
 
@@ -18,18 +19,24 @@ const utilDbController = require('./db/query-controller/utilDbController');
 
 const PORT = process.env.PORT || 8080;
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
 // Setup the routes for API or requested endpoint(s)
 app.use('/resolverdescriptionfile.schema.json', resolverDescFileRouter);
-app.use('/.well-known/resolverdescriptionfile.schema.json', resolverDescFileRouter);
+app.use(
+  '/.well-known/resolverdescriptionfile.schema.json',
+  resolverDescFileRouter
+);
 app.use('/hello', heartBeatRouter);
 app.use('/.well-known', wellKnownRouter);
 app.use('/unixtime', unixTimeRouter);
 app.use('/dashboard', dashboardController);
-app.use('/health/live', (req, res) => {res.status(200).send('OK');});
+app.use('/health/live', (req, res) => {
+  res.status(200).send('OK');
+});
 app.use('/health/ready', utilDbController);
 app.use('/', analyseURI, aiRouterApp);
 
@@ -48,7 +55,9 @@ app.listen(PORT, (err) => {
     console.log('Server listen error:', err);
     return;
   }
-  console.log(`GS1 DigitalLink ID Server is listening on port ${PORT} in this container`);
+  console.log(
+    `GS1 DigitalLink ID Server is listening on port ${PORT} in this container`
+  );
 });
 
 /**

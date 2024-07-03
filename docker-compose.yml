@@ -92,7 +92,7 @@ services:
     build: './resolver_sql_server'
     container_name: resolver-sql-server
     volumes:
-      - sql-server-volume-db-data:/var/opt/mssql/data
+      - ./resolver_sql_server/data:/var/opt/mssql/data
       - sql-server-volume-db-log:/var/opt/mssql/log
       - sql-server-volume-db-secrets:/var/opt/mssql/secrets
       - sql-server-dbbackup-volume:/dbbackup
